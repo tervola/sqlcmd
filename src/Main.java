@@ -11,14 +11,11 @@ public class Main {
     static String USER_NAME = "postgres";
     static String PASSWORD = "Password01";
     static boolean USING_SCANNER = true; //false - hardcoding connection params
-
     static Informer informer;
 
-    
     public static void main(String[] args) {
 
           informer = new InformerImpl(DRIVER,SERVER_NAME,PORT,DATABASE_NAME,USER_NAME,PASSWORD,USING_SCANNER);
-
 
           int code = 0;
           while (code >=0 ) {

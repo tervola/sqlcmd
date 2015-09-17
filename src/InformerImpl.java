@@ -27,25 +27,25 @@ public class InformerImpl implements Informer {
         print(
 
                 "\t" + "help: \n\t\tShow this help" + "\n" +
-                        "\t" + "list: \n" +
-                        "\t\tList of tables into the database" + "\n" +
-                        "\t" + "Select from table: \n" +
-                        "\t\tSelect records from table, examples:" + "\n" +
-                        "\t\t" + " \"SELECT * FROM name\"" + "\n" +
-                        "\t\t" + " \"SELECT * FROM name WHERE id > 1\"" + "\n" +
-                        "\t\t" + " \"SELECT id FROM name WHERE id < 1\"" + "\n" +
-                        "\t" + "Insert into to table: \n" +
-                        "\t\t" + " \"INSERT INTO id (id_name,id_temp,country_name) VALUES (3, 'tree', 'UA');\"" + "\n"+
-                        "\t\t" + " \"INSERT INTO employee (id,name,alias) VALUES (1, 'Stas', 'tervola');\"" + "\n"+
-                        "\t" + "Updating records: \n" +
-                        "\t\tupdating records into table" + "\n" +
-                        "\t\t" + " \"UPDATE id set country_name = 'Unknown' WHERE country_name ='null';\"" + "\n" +
-                        "\t" + "Deleting records: \n" +
-                        "\t\t" + " \"DELETE FROM id WHERE id_name = 4;\"" + "\n" +
-                        "\t" + "drop: \n" +
-                        "\t\t\"DROP TABLE films, distributors;\"" + "\n" +
-                        "\t" + "Create table: \n" +
-                        "\t\t" + " \"CREATE TABLE COMPANY (ID INT, NAME TEXT NOT NULL, AGE INT NOT NULL)\";"
+                "\t" + "list: \n" +
+                "\t\tList of tables into the database" + "\n" +
+                "\t" + "Select from table: \n" +
+                "\t\tSelect records from table, examples:" + "\n" +
+                "\t\t" + " \"SELECT * FROM name\"" + "\n" +
+                "\t\t" + " \"SELECT * FROM name WHERE id > 1\"" + "\n" +
+                "\t\t" + " \"SELECT id FROM name WHERE id < 1\"" + "\n" +
+                "\t" + "Insert into to table: \n" +
+                "\t\t" + " \"INSERT INTO id (id_name,id_temp,country_name) VALUES (3, 'tree', 'UA');\"" + "\n"+
+                "\t\t" + " \"INSERT INTO employee (id,name,alias) VALUES (1, 'Stas', 'tervola');\"" + "\n"+
+                "\t" + "Updating records: \n" +
+                "\t\tupdating records into table" + "\n" +
+                "\t\t" + " \"UPDATE id set country_name = 'Unknown' WHERE country_name ='null';\"" + "\n" +
+                "\t" + "Deleting records: \n" +
+                "\t\t" + " \"DELETE FROM id WHERE id_name = 4;\"" + "\n" +
+                "\t" + "drop: \n" +
+                "\t\t\"DROP TABLE films, distributors;\"" + "\n" +
+                "\t" + "Create table: \n" +
+                "\t\t" + " \"CREATE TABLE COMPANY (ID INT, NAME TEXT NOT NULL, AGE INT NOT NULL)\";"
         );
     }
 

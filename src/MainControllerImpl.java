@@ -63,12 +63,10 @@ public class MainControllerImpl implements MainController {
             rval += String.valueOf(index++) + ". " + rs.getString(3) + "\n";
         }
         return rval.substring(0, rval.length() - 1);
-
     }
 
     @Override
     public ArrayList<String[]> select(Connection connection, String sql) throws SQLException {
-
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         ArrayList<String[]> table =  createTable(rs);
@@ -114,8 +112,8 @@ public class MainControllerImpl implements MainController {
 
         String[] tableTitles = new String[columnCount];
 
-            for (int i = 1; i <= columnCount; i++) {
-                tableTitles[i - 1] = resultSet.getMetaData().getColumnName(i);
+        for (int i = 1; i <= columnCount; i++) {
+            tableTitles[i - 1] = resultSet.getMetaData().getColumnName(i);
         }
         return tableTitles;
     }
