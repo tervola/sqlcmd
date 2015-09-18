@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public interface MainController {
 
-    String tableList() throws SQLException;
+    ArrayList<String> tableList() throws SQLException;
 
     ArrayList<String[]> select(String sql) throws SQLException;
 

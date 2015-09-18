@@ -13,15 +13,14 @@ public class MainControllerImpl implements MainController {
     }
 
     @Override
-    public String tableList() throws SQLException{
-        String rval = "";
+    public ArrayList<String> tableList() throws SQLException{
+        ArrayList<String> rval = new ArrayList<String>();
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
-        int index =1;
         while (rs.next()) {
-            rval += String.valueOf(index++) + ". " + rs.getString(3) + "\n";
+            rval.add(rs.getString(3));
         }
-        return rval.substring(0, rval.length() - 1);
+        return rval;
     }
 
     @Override

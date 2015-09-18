@@ -11,7 +11,7 @@ public class Main {
     static String DRIVER = "jdbc:postgresql://";
     static String USER_NAME = "postgres";
     static String PASSWORD = "Password01";
-    static boolean USING_SCANNER = true; //false - hardcoding connection params
+    static boolean USING_SCANNER = false; //false - hardcoding connection params
     static AuthCredential authCredential;
     static Informer informer;
 

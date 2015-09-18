@@ -88,7 +88,12 @@ public class InformerImpl implements Informer {
                     authCredential.getDatabaseName(),
                     authCredential.getServerName(),
                     authCredential.getPortNumber()));
-            print(mainController.tableList());
+            int index = 1;
+            for (String s : mainController.tableList())
+            {
+                print(String.valueOf(index++) + "." + s);
+            }
+            //print(mainController.tableList());
             rval = 1;
         } else if (string.startsWith("select"))  {
             print(String.format("\nResult: \"%s\"", string));
