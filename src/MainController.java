@@ -16,4 +16,5 @@ public interface MainController {
     void executeCommand(Connection connection, String sql) throws SQLException;
 
     void close(Connection connection) throws SQLException;
+
 }

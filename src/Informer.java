@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -8,5 +9,5 @@ public interface Informer {
     void help();
     void print(String string);
     void printTable(ArrayList<String[]> table);
-    int parser(String string);
+    int parser(String string) throws SQLException;
 }

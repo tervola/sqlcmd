@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
@@ -15,12 +16,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-          informer = new InformerImpl(DRIVER,SERVER_NAME,PORT,DATABASE_NAME,USER_NAME,PASSWORD,USING_SCANNER);
+          //informer = new InformerImpl(DRIVER,SERVER_NAME,PORT,DATABASE_NAME,USER_NAME,PASSWORD,USING_SCANNER);
+        
 
           int code = 0;
           while (code >=0 ) {
               informer.print("Input command:");
-              code = informer.parser(new Scanner(System.in).nextLine());
+              try {
+                  code = informer.parser(new Scanner(System.in).nextLine());
+              } catch (SQLException e) {
+                  System.err.println(e.getMessage());
+              }
               if(code == 0)
               {
                   informer.print("Error command. Try again or type \"exit\"");

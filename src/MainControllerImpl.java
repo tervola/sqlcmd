@@ -1,7 +1,5 @@
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * Created by user on 8/28/2015.
@@ -39,7 +37,7 @@ public class MainControllerImpl implements MainController {
     }
 
     @Override
-    public String tableList(Connection connection) throws SQLException {
+    public String tableList(Connection connection) throws SQLException{
         String rval = "";
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
@@ -51,11 +49,13 @@ public class MainControllerImpl implements MainController {
     }
 
     @Override
-    public ArrayList<String[]> select(Connection connection, String sql) throws SQLException {
+    public ArrayList<String[]> select(Connection connection, String sql) throws SQLException{
+
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         ArrayList<String[]> table =  createTable(rs);
         stmt.close();
+
         return table;
     }
 
@@ -111,4 +111,5 @@ public class MainControllerImpl implements MainController {
         }
         return rval.split(" ");
     }
+
 }

@@ -87,7 +87,7 @@ public class InformerImpl implements Informer {
     }
 
     @Override
-    public int parser(String string) {
+    public int parser(String string) throws SQLException{
         int rval = 0;
         string = string.toLowerCase();
 
@@ -100,29 +100,17 @@ public class InformerImpl implements Informer {
             mainController.close(connection);
             rval = -1;
         } else if (string.equals("list")) {
-            this.print(String.format("\nList of tables in database: %s, on the server: %s:%s:", databaseName, serverName, portNumber));
-            try {
-                print(mainController.tableList(connection));
-                rval = 1;
-            } catch (SQLException e) {
-                e.getMessage();
-            }
+            this.print(String.format("\nList of tables in database: %s, on the server: %s:%s", databaseName, serverName, portNumber));
+            print(mainController.tableList(connection));
+            rval = 1;
         } else if (string.startsWith("select"))  {
             print(String.format("\nResult: \"%s\"", string));
-            try {
-                printTable(mainController.select(connection, string));
-                rval = 1;
-            } catch (SQLException e) {
-                e.getMessage();
-            }
+            rval = 1;
+            printTable(mainController.select(connection, string));
         } else {
-            try {
                 mainController.executeCommand(connection, string);
                 print(String.format("%s command was successfully!!!",string.split(" ")[0]));
                 rval = 1;
-            } catch (SQLException e) {
-                e.getMessage();
-            }
         }
         return rval;
     }
