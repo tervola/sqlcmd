@@ -11,7 +11,7 @@ public class Main {
     static String DRIVER = "jdbc:postgresql://";
     static String USER_NAME = "postgres";
     static String PASSWORD = "Password01";
-    static boolean USING_SCANNER = false; //false - hardcoding connection params
+    static boolean USING_SCANNER = true; //false - hardcoding connection params
     static AuthCredential authCredential;
     static Informer informer;
 
@@ -22,13 +22,21 @@ public class Main {
 
         int code = 0;
         while (code >=0 ) {
-            informer.print("Input command:");
+            informer.print("Input command():");
             try {
                 code = informer.parser(new Scanner(System.in).nextLine());
-            } catch (SQLException e) {
-                System.err.println(e.getMessage());
+            } catch (SQLException error) {
+                errorHandler(error);
             }
-            if(code == 0) informer.print("Error command. Try again or type \"exit\"");
+            if(code == 0) System.err.println("Try again or type \"exit\"");
+        }
+    }
+
+    private static void errorHandler(SQLException error) {
+        String[] errorMessage = error.getMessage().split("\n");
+
+        for (int i = 0; i < errorMessage.length - 1 ; i++) {
+            System.err.print(errorMessage[i] + ". ");
         }
     }
 }

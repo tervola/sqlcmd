@@ -14,8 +14,8 @@ public class InformerImpl implements Informer {
 
     public InformerImpl(AuthCredential authCredential) {
         this.authCredential = authCredential;
-        this.mainController = new MainControllerImpl(authCredential);
-        this.connection = mainController.connect();
+        connection = authCredential.getConnection();
+        mainController = new MainControllerImpl(connection);
         print("Type \"help\" for command list or type command: ");
     }
 
@@ -69,7 +69,10 @@ public class InformerImpl implements Informer {
 
     @Override
     public int parser(String string) throws SQLException{
+
         int rval = 0;
+        //if (string.trim().length() == 0 || string.isEmpty()) throw new SQLException("Error: Command is empty!");
+        if (string.trim().length() == 0 || string.isEmpty()) return rval;
         string = string.toLowerCase();
 
         if (string.equals("help")){
@@ -78,21 +81,21 @@ public class InformerImpl implements Informer {
         } else if (string.equals("exit")) {
             this.print("");
             this.print("Closing connection...");
-            mainController.close(connection);
+            mainController.close();
             rval = -1;
         } else if (string.equals("list")) {
             print(String.format("\nList of tables in database: %s, on the server: %s:%s",
                     authCredential.getDatabaseName(),
                     authCredential.getServerName(),
                     authCredential.getPortNumber()));
-            print(mainController.tableList(connection));
+            print(mainController.tableList());
             rval = 1;
         } else if (string.startsWith("select"))  {
             print(String.format("\nResult: \"%s\"", string));
+            printTable(mainController.select(string));
             rval = 1;
-            printTable(mainController.select(connection, string));
         } else {
-                mainController.executeCommand(connection, string);
+                mainController.executeCommand(string);
                 print(String.format("%s command was successfully!!!",string.split(" ")[0]));
                 rval = 1;
         }

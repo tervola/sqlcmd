@@ -7,14 +7,12 @@ import java.util.ArrayList;
  */
 public interface MainController {
 
-    Connection connect();
+    String tableList() throws SQLException;
 
-    String tableList(Connection connection) throws SQLException;
+    ArrayList<String[]> select(String sql) throws SQLException;
 
-    ArrayList<String[]> select(Connection connection, String sql) throws SQLException;
+    void executeCommand(String sql) throws SQLException;
 
-    void executeCommand(Connection connection, String sql) throws SQLException;
-
-    void close(Connection connection) throws SQLException;
+    void close() throws SQLException;
 
 }

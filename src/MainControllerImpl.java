@@ -6,38 +6,14 @@ import java.util.ArrayList;
  */
 public class MainControllerImpl implements MainController {
 
-    private String driver;
-    private String serverName;
-    private String port;
-    private String databaseName;
-    private String userName;
-    private String password;
+    Connection connection;
 
-    public MainControllerImpl(AuthCredential authCredential) {
-        this.databaseName = authCredential.getDatabaseName();
-        this.userName = authCredential.getUserName();
-        this.password = authCredential.getPassword();
-        this.driver = authCredential.getDriver();
-        this.serverName = authCredential.getServerName();
-        this.port = authCredential.getPortNumber();
+    public MainControllerImpl( Connection connection) {
+        this.connection = connection;
     }
 
     @Override
-    public Connection connect() {
-        Connection connection = null;
-        try {
-            String con = driver + serverName + ":" + port + "/" + databaseName;
-            connection = DriverManager.getConnection(con, userName, password);
-            System.out.println(String.format("Opened database %s successfully", databaseName));
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
-        }
-        return connection;
-    }
-
-    @Override
-    public String tableList(Connection connection) throws SQLException{
+    public String tableList() throws SQLException{
         String rval = "";
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
@@ -49,7 +25,7 @@ public class MainControllerImpl implements MainController {
     }
 
     @Override
-    public ArrayList<String[]> select(Connection connection, String sql) throws SQLException{
+    public ArrayList<String[]> select(String sql) throws SQLException{
 
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
@@ -60,12 +36,12 @@ public class MainControllerImpl implements MainController {
     }
 
     @Override
-    public void executeCommand(Connection connection, String str) throws SQLException {
-        doUpdateExecution(connection, str);
+    public void executeCommand(String str) throws SQLException {
+        doUpdateExecution(str);
     }
 
     @Override
-    public void close(Connection connection) {
+    public void close() {
         try {
             connection.close();
         } catch (SQLException e) {
@@ -73,7 +49,7 @@ public class MainControllerImpl implements MainController {
         }
     }
 
-    public void doUpdateExecution(Connection connection, String str) throws SQLException {
+    public void doUpdateExecution( String str) throws SQLException {
         Statement stmt = connection.createStatement();
         stmt.executeUpdate(str);
         stmt.close();
