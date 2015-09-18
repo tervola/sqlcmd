@@ -1,25 +1,41 @@
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by user on 9/15/2015.
  */
 public class InformerImpl implements Informer {
 
-    private String dbName;
+    private String databaseName;
     private String serverName;
     private String portNumber;
     private MainControllerImpl mainController;
     private Connection connection;
 
-    public InformerImpl(String driver,String serverName,String portNumber,String dbName, String userName,String password,boolean usingScanner ) {
-        this.dbName = dbName;
+
+    public InformerImpl(String driver,String serverName,String portNumber,String databaseName, String userName,String password,boolean usingScanner ) {
+        this.databaseName = databaseName;
         this.serverName = serverName;
         this.portNumber = portNumber;
-        this.mainController = new MainControllerImpl(driver,serverName,portNumber,dbName,userName,password,usingScanner);
+
+        if (usingScanner) {
+            System.out.println("Type credentials to connect to SQL server(database|username|password):");
+            String credentials = new Scanner(System.in).nextLine();
+            String[] line = credentials.split("\\|");
+            try {
+                this.databaseName = line[0].trim();
+                userName = line[1].trim();
+                password = line[2].trim();
+            } catch (Exception e) {
+                System.err.println("Wrong input type format!");
+            }
+        }
+
+        this.mainController = new MainControllerImpl(driver,serverName,portNumber,this.databaseName,userName,password);
         this.connection = mainController.connect();
-        print("Input \"help\" for command list or type command: ");
+        print("Type \"help\" for command list or type command: ");
     }
 
     @Override
@@ -84,7 +100,7 @@ public class InformerImpl implements Informer {
             mainController.close(connection);
             rval = -1;
         } else if (string.equals("list")) {
-            this.print(String.format("\nList of tables in database: %s, on the server: %s:%s:", dbName, serverName, portNumber));
+            this.print(String.format("\nList of tables in database: %s, on the server: %s:%s:", databaseName, serverName, portNumber));
             try {
                 print(mainController.tableList(connection));
                 rval = 1;

@@ -15,28 +15,13 @@ public class MainControllerImpl implements MainController {
     private String userName;
     private String password;
 
-    public MainControllerImpl(String driver, String serverName, String port, String databaseName, String userName, String password, boolean usingScanner) {
+    public MainControllerImpl(String driver, String serverName, String port, String databaseName, String userName, String password) {
+        this.databaseName = databaseName;
+        this.userName = userName;
+        this.password = password;
         this.driver = driver;
         this.serverName = serverName;
         this.port = port;
-
-        if (usingScanner) {
-            System.out.println("Type credentials to connect to SQL server(database|username|password):");
-            String credentials = new Scanner(System.in).nextLine();
-            String[] line = credentials.split("\\|");
-            try {
-                this.databaseName = line[0].trim();
-                this.userName = line[1].trim();
-                this.password = line[2].trim();
-            } catch (Exception e) {
-                System.err.println("Wrong input type format!");
-            }
-        } else {
-            this.databaseName = databaseName;
-            this.userName = userName;
-            this.password = password;
-        }
-
     }
 
     @Override
