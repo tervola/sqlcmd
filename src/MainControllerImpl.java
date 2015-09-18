@@ -14,7 +14,7 @@ public class MainControllerImpl implements MainController {
 
     @Override
     public ArrayList<String> tableList() throws SQLException{
-        ArrayList<String> rval = new ArrayList<String>();
+        ArrayList<String> rval = new ArrayList<>();
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
         while (rs.next()) {
@@ -64,7 +64,6 @@ public class MainControllerImpl implements MainController {
         while(resultSet.next()) {
             list.add(createBody(resultSet, columnCount));
         }
-
         return list;
     }
 
@@ -79,12 +78,12 @@ public class MainControllerImpl implements MainController {
     }
     private String[] createBody(ResultSet resultSet, int columnCount) throws SQLException {
 
-        String rval = "";
+        String[] rval = new String[columnCount] ;
 
         for (int i = 1; i <= columnCount ; i++) {
-            rval += resultSet.getString(i) + " ";
+            rval[i-1] += resultSet.getString(i);
         }
-        return rval.split(" ");
+        return rval;
     }
 
 }
