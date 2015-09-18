@@ -13,13 +13,13 @@ public class MainControllerImpl implements MainController {
     private String userName;
     private String password;
 
-    public MainControllerImpl(String driver, String serverName, String port, String databaseName, String userName, String password) {
-        this.databaseName = databaseName;
-        this.userName = userName;
-        this.password = password;
-        this.driver = driver;
-        this.serverName = serverName;
-        this.port = port;
+    public MainControllerImpl(AuthCredential authCredential) {
+        this.databaseName = authCredential.getDatabaseName();
+        this.userName = authCredential.getUserName();
+        this.password = authCredential.getPassword();
+        this.driver = authCredential.getDriver();
+        this.serverName = authCredential.getServerName();
+        this.port = authCredential.getPortNumber();
     }
 
     @Override
