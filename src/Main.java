@@ -28,7 +28,7 @@ public class Main {
             } catch (SQLException error) {
                 errorHandler(error);
             }
-            if(code == 0) System.err.println("Try again or type \"exit\"");
+            if(code == 0) System.err.println("Try again or type \"help\"");
         }
     }
 

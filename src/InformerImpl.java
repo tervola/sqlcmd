@@ -22,6 +22,7 @@ public class InformerImpl implements Informer {
     public void help() {
         print(
             "\t" + "help: \n\t\tShow this help" + "\n" +
+            "\t" + "exit: \n\t\tOutput from the program" + "\n" +
             "\t" + "list: \n" +
             "\t\tList of tables into the database" + "\n" +
             "\t" + "Select from table: \n" +
