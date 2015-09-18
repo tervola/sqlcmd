@@ -13,6 +13,7 @@ public class ConnectionManager {
     private String userName;
     private String driver;
     private String password;
+    private Connection connection;
 
     public ConnectionManager(String driver, String serverName, String portNumber, String databaseName, String userName, String password, boolean usingScanner) {
         this.driver = driver;
@@ -38,17 +39,17 @@ public class ConnectionManager {
         }
     }
 
-    public Connection getConnection() {
-        Connection connection = null;
-        try {
-            String con = driver + serverName + ":" + portNumber + "/" + databaseName;
-            connection = DriverManager.getConnection(con, userName, password);
-            System.out.println(String.format("Opened database %s successfully", databaseName));
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(-1);
+    public Connection connect() {
+        if(connection == null) {
+            try {
+                String con = driver + serverName + ":" + portNumber + "/" + databaseName;
+                connection = DriverManager.getConnection(con, userName, password);
+                System.out.println(String.format("Opened database %s successfully", databaseName));
+            } catch (Exception e) {
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.exit(-1);
+            }
         }
-
         return connection;
     }
 

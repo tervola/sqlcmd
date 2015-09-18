@@ -13,7 +13,7 @@ public class InformerImpl implements Informer {
 
     public InformerImpl(ConnectionManager connectionManager) {
         this.connectionManager = connectionManager;
-        connection = connectionManager.getConnection();
+        connection = connectionManager.connect();
         mainController = new MainControllerImpl(connection);
         print("Type \"help\" for command list or type command: ");
     }
