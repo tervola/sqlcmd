@@ -12,13 +12,13 @@ public class Main {
     static String USER_NAME = "postgres";
     static String PASSWORD = "Password01";
     static boolean USING_SCANNER = false; //false - hardcoding connection params
-    static AuthCredential authCredential;
+    static ConnectionManager connectionManager;
     static Informer informer;
 
     public static void main(String[] args) {
 
-        authCredential = new AuthCredential(DRIVER,SERVER_NAME,PORT,DATABASE_NAME,USER_NAME,PASSWORD,USING_SCANNER);
-        informer = new InformerImpl(authCredential);
+        connectionManager = new ConnectionManager(DRIVER,SERVER_NAME,PORT,DATABASE_NAME,USER_NAME,PASSWORD,USING_SCANNER);
+        informer = new InformerImpl(connectionManager);
 
         int code = 0;
         while (code >=0 ) {
