@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -8,13 +9,34 @@ import java.util.ArrayList;
 public class InformerImpl implements Informer {
 
     private ConnectionManager connectionManager;
-    private MainControllerImpl mainController;
+    private DbControllerImpl dbController;
     private Connection connection;
+    private ConfigReader configReader;
 
-    public InformerImpl(ConnectionManager connectionManager) {
+    public InformerImpl(ConnectionManager connectionManager, ConfigReader configReader) throws SQLException, IOException {
         this.connectionManager = connectionManager;
+        this.configReader = configReader;
         connection = connectionManager.connect();
-        mainController = new MainControllerImpl(connection);
+        dbController = new DbControllerImpl(connection);
+
+        if(this.connectionManager == null){
+            System.out.println(connectionManager);
+            System.out.println(this.connectionManager);
+        }
+
+        if(this.configReader == null)
+        {
+            System.out.println(this.configReader.toString());
+            System.out.println(configReader);
+        }
+        if(connection == null)
+        {
+            System.out.println(connection);
+        }
+        if(dbController == null)
+        {
+            System.out.println(dbController);
+        }
         print("Type \"help\" for command list or type command: ");
     }
 
@@ -79,25 +101,25 @@ public class InformerImpl implements Informer {
         } else if (string.equals("exit")) {
             this.print("");
             this.print("Closing connection...");
-            mainController.close();
+            connectionManager.close();
             rval = -1;
         } else if (string.equals("list")) {
             print(String.format("\nList of tables in database: %s, on the server: %s:%s",
-                    connectionManager.getDatabaseName(),
-                    connectionManager.getServerName(),
-                    connectionManager.getPortNumber()));
+                    configReader.getDatabaseName(),
+                    configReader.getServername(),
+                    configReader.getPortNumber()));
             int index = 1;
-            for (String s : mainController.tableList())
+            for (String s : dbController.tableList())
             {
                 print(String.valueOf(index++) + "." + s);
             }
             rval = 1;
         } else if (string.startsWith("select"))  {
             print(String.format("\nResult: \"%s\"", string));
-            printTable(mainController.select(string));
+            printTable(dbController.select(string));
             rval = 1;
         } else {
-            mainController.executeCommand(string);
+            dbController.executeCommand(string);
             print(String.format("%s command was successfully!!!",string.split(" ")[0]));
             rval = 1;
         }
