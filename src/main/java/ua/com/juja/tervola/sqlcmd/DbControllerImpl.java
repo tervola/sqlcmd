@@ -1,3 +1,5 @@
+package ua.com.juja.tervola.sqlcmd;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,7 @@ public class DbControllerImpl implements DbController {
 
     @Override
     public ArrayList<String> tableList() throws SQLException{
-        ArrayList<String> rval = new ArrayList<>();
+        ArrayList<String> rval = new ArrayList<String>();
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
         while (rs.next()) {
@@ -49,7 +51,7 @@ public class DbControllerImpl implements DbController {
     }
 
     private ArrayList<String []> createTable(ResultSet resultSet) throws SQLException {
-        ArrayList<String []> list = new ArrayList<>();
+        ArrayList<String []> list = new ArrayList<String[]>();
         int columnCount = resultSet.getMetaData().getColumnCount();
         if (columnCount < 0 ) return null;
 
@@ -76,7 +78,7 @@ public class DbControllerImpl implements DbController {
         String[] rval = new String[columnCount] ;
 
         for (int i = 1; i <= columnCount ; i++) {
-            rval[i-1] += resultSet.getString(i);
+            rval[i-1] = resultSet.getString(i);
         }
         return rval;
     }

@@ -1,3 +1,5 @@
+package ua.com.juja.tervola.sqlcmd;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
