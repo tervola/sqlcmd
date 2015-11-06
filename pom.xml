@@ -6,9 +6,19 @@
 
     <groupId>ua.com.juja.tervola.sqlcmd</groupId>
     <artifactId>sqlcmd</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>war</packaging>
+    <name>juja-tervola-sqlcmd</name>
+    <description>juja-tervola-sqlcmd</description>
+
+    <!--properties>
+        <project.build.sourceEnicoding>UTF-8</project.build.sourceEnicoding>
+    </properties-->
+
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -19,14 +29,11 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
                 <version>2.5.2</version>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -35,10 +42,31 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <!--packagingExcludes>WEB-INF/web.xml</packagingExcludes-->
+                    <packagingIncludes>WEB-INF/web.xml</packagingIncludes>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -50,7 +78,15 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.5</version>
+        </dependency>
+
 
     </dependencies>
 </project>
