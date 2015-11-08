@@ -13,15 +13,18 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doGet(req, resp);
         String requestURI = req.getRequestURI();
         String action = requestURI.substring(req.getContextPath().length(), requestURI.length());
 
-        if (action.startsWith("/menu")) {
+
+        if (action.equals("/menu")) {
             req.getRequestDispatcher("menu.jsp").forward(req, resp);
         } else if (action.equals("/help")){
             req.getRequestDispatcher("help.jsp").forward(req, resp);
+        } else {
+            req.getRequestDispatcher("error.jsp").forward(req, resp);
         }
+
     }
 
 //    @Override

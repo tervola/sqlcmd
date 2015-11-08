@@ -20,6 +20,17 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>9090</port>
+                    <path>/sqlcmd</path>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -42,15 +53,6 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>2.1.1</version>
-                <configuration>
-                    <!--packagingExcludes>WEB-INF/web.xml</packagingExcludes-->
-                    <packagingIncludes>WEB-INF/web.xml</packagingIncludes>
-                </configuration>
-            </plugin>
-
         </plugins>
     </build>
 
@@ -65,6 +67,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>2.5</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -86,7 +89,5 @@
             <artifactId>mockito-all</artifactId>
             <version>1.9.5</version>
         </dependency>
-
-
     </dependencies>
 </project>
