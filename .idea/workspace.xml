@@ -2,105 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbbca376-70b0-4460-b12d-b9e1fdd9fdd2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/sqlcmd_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/sqlcmd_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_9_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__postgresql_postgresql_9_0_801_jdbc4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/error.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/ConfigReader.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/ConnectionManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/Controller.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/DbController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/DbControllerImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/Informer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/InformerImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/lib/mockito-all-1.9.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/lib/postgresql-9.0-801.jdbc4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/lib/servlet-api-2.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/help.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd-1.0-SNAPSHOT/menu.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/backport-util-concurrent-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/classworlds-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/commons-cli-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/commons-codec-1.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/commons-compress-1.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/commons-httpclient-3.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/commons-io-2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/doxia-logging-api-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/doxia-sink-api-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/jackrabbit-jcr-commons-1.5.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/jackrabbit-webdav-1.5.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/jcl-over-slf4j-1.5.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/jsch-0.1.38.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/jsr305-2.0.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-archiver-2.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-artifact-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-artifact-manager-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-core-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-error-diagnostics-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-filtering-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-mapping-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-model-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-monitor-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-plugin-api-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-plugin-descriptor-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-plugin-parameter-documenter-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-plugin-registry-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-profile-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-project-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-reporting-api-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-repository-metadata-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-settings-2.2.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-shared-utils-0.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/maven-war-plugin-2.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/nekohtml-1.9.6.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-archiver-2.9.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-build-api-0.0.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-cipher-1.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-container-default-1.0-alpha-9-stable-1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-interactivity-api-1.0-alpha-4.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-interpolation-1.21.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-io-2.4.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-sec-dispatcher-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/plexus-utils-3.0.20.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/slf4j-api-1.5.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/slf4j-jdk14-1.5.6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/slf4j-nop-1.5.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-file-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-http-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-http-lightweight-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-http-shared-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-provider-api-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-ssh-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-ssh-common-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-ssh-external-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/wagon-webdav-jackrabbit-1.0-beta-6.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/xercesMinimal-1.9.6.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/xmlpull-1.1.3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/xpp3_min-1.1.4c.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/lib/xstream-1.4.4.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd.war" afterPath="$PROJECT_DIR$/target/sqlcmd.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" afterPath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sqlcmd.iml" afterPath="$PROJECT_DIR$/sqlcmd.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/menu.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/menu.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/menu.jsp" afterPath="$PROJECT_DIR$/target/sqlcmd/menu.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/help.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/help.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-11-08" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-11-08" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.java" />
     </list>
     <ignored path="sqlcmd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -123,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3600605">
-              <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+            <state vertical-scroll-proportion="-15.692307">
+              <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -141,16 +47,6 @@
               <folding>
                 <marker date="1446989489573" expanded="true" signature="466:922" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainServlet.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.444445">
-              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -175,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="help.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="help.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/help.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.39403972">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -220,6 +116,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/help.jsp" />
       </list>
     </option>
   </component>
@@ -1036,16 +933,16 @@
       <updated>1446908274890</updated>
       <workItem from="1446908278150" duration="3377000" />
       <workItem from="1446919079918" duration="555000" />
-      <workItem from="1446980754959" duration="9668000" />
+      <workItem from="1446980754959" duration="12449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13600000" />
+    <option name="totallyTimeSpent" value="16381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1176" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1182,18 +1079,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/help.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.9230769">
           <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.692307">
+          <caret line="78" column="24" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38636363">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1208,18 +1113,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/help.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.444445">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3600605">
-          <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.39403972">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding />
         </state>
       </provider>
