@@ -19,24 +19,28 @@ public class MainServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         //super.init();
-        try {
-            service = new ServiceImpl();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            //service = new ServiceImpl();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        Service service = null;
+        try {
+            service = new ServiceImpl();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         String action = getAction(req);
-
+        req.setAttribute("items",service.commandsList());
 
         if (action.equals("/menu")) {
-            req.setAttribute("items",service.commandsList());
             req.getRequestDispatcher("menu.jsp").forward(req, resp);
         } else if (action.equals("/help")){
             req.getRequestDispatcher("help.jsp").forward(req, resp);

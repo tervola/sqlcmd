@@ -17,7 +17,7 @@ public class ConfigReader {
     private String USER_NAME;
     private String PASSWORD;
     private Properties properties;
-    private String fileName = "resources/prop/config.properties";
+    private String fileName = "/hamcrest-license.txt";
     private boolean USING_SCANNER = false; //false - hardcoding connection params
 
     public ConfigReader() throws IOException, SQLException {
