@@ -25,5 +25,6 @@ Help list:<br>
         <br>CREATE TABLE COMPANY (ID INT, NAME TEXT NOT NULL, AGE INT NOT NULL)
 </ul>
 You can go to <a href="menu">Menu</a>
+
 </body>
 </html>

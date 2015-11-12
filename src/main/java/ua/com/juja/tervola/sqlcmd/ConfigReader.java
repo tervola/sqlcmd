@@ -56,6 +56,11 @@ public class ConfigReader {
         return String.format("%s%s:%s/%s",DRIVER,SERVER_NAME,PORT,DATABASE_NAME);
     }
 
+    public String getConnectionStringWithouDB()
+    {
+        return String.format("%s%s:%s/",DRIVER,SERVER_NAME,PORT);
+    }
+
     public String getUserName() {
         return USER_NAME;
     }

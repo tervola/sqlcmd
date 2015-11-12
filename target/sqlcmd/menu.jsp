@@ -4,10 +4,8 @@
         <title>SQLCmd</title>
     </head>
     <body>
-    <a href="help.jsp">Help</a> <br>
-    <a href="connect">Connect</a> <br>
-    <a href="exit">Exit</a> <br>
-    <a href="exit">test</a> <br>
-    <a href="exit">test</a> <br>
+    <c:forEach items="${items}" var="item">
+        <a href="$item">${item}</a> <br>
+    </c:forEach>
 </body>
 </html>
