@@ -1,10 +1,15 @@
 package ua.com.juja.tervola.sqlcmd;
 
+
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.Scanner;
+
 
 /**
  * Created by user on 9/29/2015.
@@ -17,12 +22,15 @@ public class ConfigReader {
     private String USER_NAME;
     private String PASSWORD;
     private Properties properties;
-    private String fileName = "/hamcrest-license.txt";
+    private String fileName = "prop/config.properties";
     private boolean USING_SCANNER = false; //false - hardcoding connection params
 
     public ConfigReader() throws IOException, SQLException {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource(fileName).getFile());
 
-        FileInputStream fileInputStream = new FileInputStream(fileName);
+        FileInputStream fileInputStream = new FileInputStream(file);
+
         properties = new Properties();
         properties.load(fileInputStream);
 
