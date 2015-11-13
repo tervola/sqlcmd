@@ -1,5 +1,6 @@
 package ua.com.juja.tervola.sqlcmd.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -8,5 +9,13 @@ import java.util.List;
 public interface Service {
     List<String> commandsList();
 
-    void connect(String dbName, String userName, String password);
+    void connect(String dbName, String userName, String password) throws SQLException;
+
+    void connect2() throws SQLException;
+
+    void setConnectedStatus(boolean bool);
+
+    boolean isConnected();
+
+    String getConnectionString();
 }

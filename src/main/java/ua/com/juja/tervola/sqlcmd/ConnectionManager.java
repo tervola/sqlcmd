@@ -12,7 +12,6 @@ public class ConnectionManager {
     String connectionString;
     String userName;
     String password;
-    String dbName;
     Connection connection;
 
     public ConnectionManager(String connectionString, String userName, String password) {
@@ -21,8 +20,8 @@ public class ConnectionManager {
         this.password = password;
     }
 
-    public ConnectionManager(String connectionStringWitoutDB, String dbName, String userName, String password) {
-        this.connectionString = connectionStringWitoutDB + dbName;
+    public ConnectionManager(String connectionStringWithoutDB, String dbName, String userName, String password) {
+        this.connectionString = connectionStringWithoutDB + dbName;
         this.userName = userName;
         this.password = password;
     }

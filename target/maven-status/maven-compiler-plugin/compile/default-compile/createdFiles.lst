@@ -1,2 +1,11 @@
+ua\com\juja\tervola\sqlcmd\DbController.class
+ua\com\juja\tervola\sqlcmd\Controller.class
 ua\com\juja\tervola\sqlcmd\service\ServiceImpl.class
+ua\com\juja\tervola\sqlcmd\ConnectionManager.class
+ua\com\juja\tervola\sqlcmd\Informer.class
+ua\com\juja\tervola\sqlcmd\ConfigReader.class
+ua\com\juja\tervola\sqlcmd\DbControllerImpl.class
+ua\com\juja\tervola\sqlcmd\Main.class
+ua\com\juja\tervola\sqlcmd\web\MainServlet.class
 ua\com\juja\tervola\sqlcmd\service\Service.class
+ua\com\juja\tervola\sqlcmd\InformerImpl.class

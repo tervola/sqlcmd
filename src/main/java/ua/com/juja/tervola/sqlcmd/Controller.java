@@ -21,6 +21,7 @@ public class Controller {
             connectionManager = new ConnectionManager(configReader.getConnectionString(), configReader.getUserName(), configReader.getPassword());
             informer = new InformerImpl(connectionManager,configReader);
             informer.print(String.format("Opened database %s successfully", configReader.getDatabaseName()));
+            informer.print(String.format("Driver:%s", configReader.getConnectionString()));
         } catch (Exception e){
             informer = new InformerImpl(connectionManager, configReader);
             informer.print(e.getClass().getName() + ": " + e.getMessage());

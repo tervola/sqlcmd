@@ -7,6 +7,12 @@
     <c:forEach items="${items}" var="item">
         <a href="${item}">${item}</a> <br>
     </c:forEach>
+    <table>
+        <tr>
+            <td>Status:</td>
+            <td>${connected}</td>
+        </tr>
+    </table>
 
 </body>
 </html>

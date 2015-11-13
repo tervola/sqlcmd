@@ -14,6 +14,7 @@ import java.util.List;
 public class ServiceImpl implements Service {
     private ConnectionManager connectionManager;
     private ConfigReader configReader;
+    private boolean isConnected = false;
 
     public ServiceImpl() throws IOException, SQLException {
         configReader = new ConfigReader();
@@ -21,11 +22,33 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String> commandsList() {
-        return Arrays.asList("help","menu","connect");
+        return Arrays.asList("help","menu","connect","mock");
     }
 
     @Override
-    public void connect(String dbName, String userName, String password) {
+    public void connect(String dbName, String userName, String password) throws SQLException {
         connectionManager = new ConnectionManager(configReader.getConnectionStringWithouDB(),dbName, userName,password);
+        connectionManager.connect();
+    }
+
+    @Override
+    public void connect2() throws SQLException {
+        connectionManager = new ConnectionManager(configReader.getConnectionString(),configReader.getUserName(),configReader.getPassword());
+        connectionManager.connect();
+    }
+
+    @Override
+    public void setConnectedStatus(boolean bool) {
+        this.isConnected = bool;
+    }
+
+    @Override
+    public boolean isConnected(){
+        return isConnected;
+    }
+
+    @Override
+    public String getConnectionString() {
+        return configReader.getConnectionString();
     }
 }
