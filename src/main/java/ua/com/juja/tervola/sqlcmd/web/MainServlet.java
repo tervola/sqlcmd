@@ -37,6 +37,9 @@ public class MainServlet extends HttpServlet {
         req.setAttribute("items",service.commandsList());
 
         if (action.equals("/menu")) {
+            req.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
+            req.setAttribute("dbname", service.getConfigReader().getDatabaseName());
+            req.setAttribute("username", service.getConfigReader().getUserName());
             req.getRequestDispatcher("menu.jsp").forward(req, resp);
         } else if (action.equals("/help")){
             req.getRequestDispatcher("help.jsp").forward(req, resp);
@@ -78,8 +81,14 @@ public class MainServlet extends HttpServlet {
             try {
                 service.connect2();
                 service.setConnectedStatus(true);
+                req.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
                 resp.sendRedirect(resp.encodeRedirectURL("menu"));
             } catch (Exception e) {
+                try {
+                    throw new SQLException(Arrays.toString(e.getStackTrace()));
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
                 req.setAttribute("message", e.getMessage());
                 req.getRequestDispatcher("error.jsp").forward(req,resp);
             }

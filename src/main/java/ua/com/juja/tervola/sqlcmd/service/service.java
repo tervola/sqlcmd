@@ -1,5 +1,8 @@
 package ua.com.juja.tervola.sqlcmd.service;
 
+import ua.com.juja.tervola.sqlcmd.ConfigReader;
+import ua.com.juja.tervola.sqlcmd.ConnectionManager;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -18,4 +21,6 @@ public interface Service {
     boolean isConnected();
 
     String getConnectionString();
+
+    ConfigReader getConfigReader();
 }
