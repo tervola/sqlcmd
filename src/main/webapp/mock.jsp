@@ -10,7 +10,8 @@
                 <td></td>
                 <td><input type="submit" name="connect"></td>
             </tr>
-
+    </table>
     </form>
+    <%@include file="footer.jsp"%>
 </body>
 </html>

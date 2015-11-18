@@ -27,5 +27,7 @@ Help list:<br>
 </ul>
 You can go to <a href="menu">Menu</a>
 
+<%@include file="footer.jsp"%>
+
 </body>
 </html>

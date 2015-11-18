@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbbca376-70b0-4460-b12d-b9e1fdd9fdd2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" />
       <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\sqlcmd-1.0.jar" afterPath="" />
       <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\sqlcmd\WEB-INF\lib\postgresql-9.0-801.jdbc4.jar" afterPath="" />
       <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\sqlcmd\WEB-INF\lib\postgresql-9.1-901-1.jdbc4.jar" afterPath="" />
@@ -18,40 +19,20 @@
       <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\logs\access_log.2015-11-08" afterPath="" />
       <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\logs\access_log.2015-11-12" afterPath="" />
       <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\logs\access_log.2015-11-13" afterPath="" />
-      <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\connect_jsp.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\connect_jsp.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\help_jsp.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\help_jsp.java" afterPath="" />
-      <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\mock_jsp.class" afterPath="" />
-      <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\mock_jsp.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" afterPath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/error_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/error_jsp.class" />
-      <change type="MODIFICATION" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\menu_jsp.class" afterPath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\menu_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd.war" afterPath="$PROJECT_DIR$/target/sqlcmd.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/prop/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/prop/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/prop/config.properties" afterPath="$PROJECT_DIR$/target/classes/prop/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/prop/config.properties" afterPath="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/prop/config.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/menu_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/menu_jsp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/mock_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/mock_jsp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-11-18" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-11-18" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/connect.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/connect.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/connect.jsp" afterPath="$PROJECT_DIR$/target/sqlcmd/connect.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/error.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/error.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/error.jsp" afterPath="$PROJECT_DIR$/target/sqlcmd/error.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/error_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/error_jsp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/help.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/help.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/help.jsp" afterPath="$PROJECT_DIR$/target/sqlcmd/help.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/help_jsp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/menu.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/menu.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/menu.jsp" afterPath="$PROJECT_DIR$/target/sqlcmd/menu.jsp" />
-      <change type="MODIFICATION" beforePath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\menu_jsp.java" afterPath="D:\JUJA\sqlcmd\target\tomcat\work\Tomcat\localhost\sqlcmd\org\apache\jsp\menu_jsp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/menu_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/menu_jsp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/mock.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/mock.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/sqlcmd/mock.jsp" afterPath="$PROJECT_DIR$/target/sqlcmd/mock.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sqlcmd.iml" afterPath="$PROJECT_DIR$/sqlcmd.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sqlcmd_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sqlcmd_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/mock_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/mock_jsp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sqlcmd.iws" />
@@ -85,31 +66,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="menu.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/menu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5186441">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConnectionManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/ConnectionManager.java">
+      <file leaf-file-name="mock.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/mock.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="87" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="87" />
+            <state vertical-scroll-proportion="0.40338984">
+              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/Controller.java">
+      <file leaf-file-name="footer.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/footer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+            <state vertical-scroll-proportion="-3.2692308">
+              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connect.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/connect.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="help.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/help.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-19.615385">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -181,16 +192,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/connectMock.jsp" />
         <option value="$PROJECT_DIR$/target/sqlcmd/WEB-INF/classes/ua/com/juja/tervola/sqlcmd/web/MainServlet.class" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/ConnectionManager.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/mock.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/help.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/connect.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/error.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/prop/config.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/menu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/mock.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/help.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/footer.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/error.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/connect.jsp" />
       </list>
     </option>
   </component>
@@ -537,8 +549,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\JUJA\sqlcmd\target\classes" />
       <recent name="D:\JUJA\sqlcmd\src\main\webapp" />
+      <recent name="D:\JUJA\sqlcmd\target\classes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JUJA\sqlcmd\src\main" />
@@ -887,7 +899,7 @@
       <workItem from="1447427633247" duration="395000" />
       <workItem from="1447428061193" duration="2682000" />
       <workItem from="1447432605889" duration="11298000" />
-      <workItem from="1447767271039" duration="8684000" />
+      <workItem from="1447767271039" duration="9466000" />
     </task>
     <task id="LOCAL-00001" summary="move resources, fix read from resources file">
       <created>1447411772565</created>
@@ -899,11 +911,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60609000" />
+    <option name="totallyTimeSpent" value="61391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1218,22 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/connect.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="87" selection-start-line="0" selection-start-column="87" selection-end-line="0" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/prop/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1263,22 +1259,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/mock.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="87" selection-start-line="0" selection-start-column="87" selection-end-line="0" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/help.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7559322">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1338,10 +1318,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/connect.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/footer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/help.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.615385">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/menu.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5186441">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/mock.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40338984">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
           <folding />
         </state>
       </provider>
