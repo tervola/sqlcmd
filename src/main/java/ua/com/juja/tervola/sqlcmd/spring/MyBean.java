@@ -7,6 +7,12 @@ public class MyBean {
     private String text;
     private String name;
 
+    private Service service;
+
+    public void setService(Service service) {
+        this.service = service;
+    }
+
     public MyBean(String text) {
         this.text = text;
     }
@@ -28,7 +34,7 @@ public class MyBean {
     }
 
     public void sayHi(){
-        System.out.println(text);
+        System.out.println(text + service.getData());
     }
 
 }

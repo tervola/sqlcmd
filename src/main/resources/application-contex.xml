@@ -7,5 +7,9 @@
     <bean id="rat" class="ua.com.juja.tervola.sqlcmd.spring.MyBean">
         <constructor-arg value="Hi!"/>
         <property name="name" value="Alice Cooper"/>
+        <property name="service" ref="service"/>
     </bean>
+
+    <bean id="service" class="ua.com.juja.tervola.sqlcmd.spring.HelloWorldServiceImpl"/>
+
 </beans>
