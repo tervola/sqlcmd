@@ -1,5 +1,6 @@
 package ua.com.juja.tervola.sqlcmd.web;
 
+import ua.com.juja.tervola.sqlcmd.ConnectionManager;
 import ua.com.juja.tervola.sqlcmd.service.Service;
 import ua.com.juja.tervola.sqlcmd.service.ServiceImpl;
 
@@ -35,6 +36,9 @@ public class MainServlet extends HttpServlet {
 
         String action = getAction(req);
         req.setAttribute("items",service.commandsList());
+
+        //ConnectionManager connectionManager = (ConnectionManager) req.getSession().getAttribute("db_manager");
+
 
         if (action.equals("/menu")) {
             req.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");

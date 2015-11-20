@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:00 +0200] "GET /sqlcmd HTTP/1.1" 302 - http-bio-9090-exec-1 0
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:00 +0200] "GET /sqlcmd/ HTTP/1.1" 200 311 http-bio-9090-exec-2 254
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:03 +0200] "GET /sqlcmd/menu HTTP/1.1" 200 764 http-bio-9090-exec-3 52
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:06 +0200] "GET /sqlcmd/mock HTTP/1.1" 200 428 http-bio-9090-exec-4 44
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:07 +0200] "POST /sqlcmd/mock HTTP/1.1" 302 - http-bio-9090-exec-5 291
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:07 +0200] "GET /sqlcmd/menu HTTP/1.1" 200 760 http-bio-9090-exec-6 1
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:10 +0200] "GET /sqlcmd/connect HTTP/1.1" 200 849 http-bio-9090-exec-7 760
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:13 +0200] "POST /sqlcmd/connect HTTP/1.1" 200 366 http-bio-9090-exec-8 20
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:48:16 +0200] "GET /sqlcmd/menu HTTP/1.1" 200 760 http-bio-9090-exec-9 2
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:59:17 +0200] "GET /sqlcmd/ HTTP/1.1" 200 335 http-bio-9090-exec-1 1027
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:15:59:58 +0200] "GET /sqlcmd/ HTTP/1.1" 200 354 http-bio-9090-exec-1 754
+0:0:0:0:0:0:0:1 - - [20/Nov/2015:16:00:29 +0200] "GET /sqlcmd/ HTTP/1.1" 200 362 http-bio-9090-exec-1 792
