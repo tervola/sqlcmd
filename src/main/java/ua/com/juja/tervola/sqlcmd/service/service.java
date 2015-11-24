@@ -4,6 +4,7 @@ import ua.com.juja.tervola.sqlcmd.ConfigReader;
 import ua.com.juja.tervola.sqlcmd.ConnectionManager;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,4 +24,7 @@ public interface Service {
     String getConnectionString();
 
     ConfigReader getConfigReader();
+
+    List<String> tableList() throws SQLException;
+
 }

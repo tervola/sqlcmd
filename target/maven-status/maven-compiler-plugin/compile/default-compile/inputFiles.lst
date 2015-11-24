@@ -1,11 +1,15 @@
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\Controller.java
-D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\Main.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\InformerImpl.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\ConfigReader.java
-D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\ConnectionManager.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\service\Service.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\DbControllerImpl.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\web\MainServlet.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\service\ServiceImpl.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\Informer.java
+D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\spring\HelloWorldServiceImpl.java
+D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\spring\MainSpring.java
+D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\spring\MyBean.java
+D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\Main.java
+D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\ConnectionManager.java
+D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\spring\Service.java
 D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\DbController.java

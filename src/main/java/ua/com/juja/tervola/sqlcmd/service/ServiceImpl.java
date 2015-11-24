@@ -2,10 +2,14 @@ package ua.com.juja.tervola.sqlcmd.service;
 
 import ua.com.juja.tervola.sqlcmd.ConfigReader;
 import ua.com.juja.tervola.sqlcmd.ConnectionManager;
+import ua.com.juja.tervola.sqlcmd.DbController;
+import ua.com.juja.tervola.sqlcmd.DbControllerImpl;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,6 +17,8 @@ import java.util.List;
 public class ServiceImpl implements Service {
     private ConnectionManager connectionManager;
     private ConfigReader configReader;
+    private DbController dbController;
+    private Connection connection;
     private boolean isConnected = false;
 
     public ServiceImpl() throws IOException, SQLException {
@@ -21,13 +27,13 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String> commandsList() {
-        return Arrays.asList("help","menu","connect","mock");
+        return Arrays.asList("help","menu","connect","mock","list");
     }
 
     @Override
     public void connect(String dbName, String userName, String password) throws SQLException {
         connectionManager = new ConnectionManager(configReader.getConnectionStringWithouDB(),dbName, userName,  password);
-        connectionManager.connect();
+        connection =  connectionManager.connect();
         if(connectionManager != null) {
             isConnected = true;
         }
@@ -36,11 +42,9 @@ public class ServiceImpl implements Service {
     @Override
     public void connect2() throws SQLException {
 
-        //connectionManager = new ConnectionManager(configReader.getConnectionString(),configReader.getUserName(),configReader.getPassword());
-        //connectionManager.connect();
         try {
             Class.forName("org.postgresql.Driver");
-            DriverManager.getConnection("jdbc:postgresql://localhost:5436/MyDb", "postgres", "Password01");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5436/MyDb", "postgres", "Password01");
             isConnected = true;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -65,5 +69,12 @@ public class ServiceImpl implements Service {
     @Override
     public ConfigReader getConfigReader(){
         return configReader;
+    }
+
+    @Override
+    public List<String> tableList() throws SQLException {
+
+        dbController = new DbControllerImpl(connection);
+        return dbController.tableList();
     }
 }

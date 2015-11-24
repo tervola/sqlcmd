@@ -51,6 +51,15 @@ public class MainServlet extends HttpServlet {
             req.getRequestDispatcher("connect.jsp").forward(req, resp);
         }else if (action.equals("/mock")) {
             req.getRequestDispatcher("mock.jsp").forward(req, resp);
+        }else if (action.equals("/list")) {
+            try {
+                req.setAttribute("tablelist", service.tableList());
+            } catch (SQLException e) {
+                e.printStackTrace();
+                req.setAttribute("error",e.getMessage());
+                req.getRequestDispatcher("error.jsp").forward(req,resp);
+            }
+            req.getRequestDispatcher("list.jsp").forward(req, resp);
         }else {
             req.getRequestDispatcher("error.jsp").forward(req, resp);
         }
