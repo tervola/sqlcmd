@@ -27,4 +27,6 @@ public interface Service {
 
     List<String> tableList() throws SQLException;
 
+    List<String[]> select(String sql) throws SQLException;
+
 }

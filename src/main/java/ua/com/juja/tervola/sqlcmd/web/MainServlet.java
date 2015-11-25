@@ -18,6 +18,7 @@ import java.util.Arrays;
  */
 public class MainServlet extends HttpServlet {
     Service service;
+    String sqlCommand;
 
     @Override
     public void init() throws ServletException {
@@ -51,19 +52,34 @@ public class MainServlet extends HttpServlet {
             req.getRequestDispatcher("connect.jsp").forward(req, resp);
         }else if (action.equals("/mock")) {
             req.getRequestDispatcher("mock.jsp").forward(req, resp);
+        }else if (action.equals("/select")) {
+            req.getRequestDispatcher("select.jsp").forward(req, resp);
+        }else if (action.equals("/select_mock")) {
+            req.getRequestDispatcher("select_mock.jsp").forward(req, resp);
+        }else if (action.equals("/select_result")) {
+            try {
+                req.setAttribute("select",service.select(sqlCommand));
+            } catch (SQLException e) {
+                redirectToErrorPage(req, resp, e);
+            }
+            req.getRequestDispatcher("select_result.jsp").forward(req, resp);
         }else if (action.equals("/list")) {
             try {
                 req.setAttribute("tablelist", service.tableList());
             } catch (SQLException e) {
-                e.printStackTrace();
-                req.setAttribute("error",e.getMessage());
-                req.getRequestDispatcher("error.jsp").forward(req,resp);
+                redirectToErrorPage(req, resp, e);
             }
             req.getRequestDispatcher("list.jsp").forward(req, resp);
         }else {
             req.getRequestDispatcher("error.jsp").forward(req, resp);
         }
 
+    }
+
+    private void redirectToErrorPage(HttpServletRequest req, HttpServletResponse resp, SQLException e) throws ServletException, IOException {
+        e.printStackTrace();
+        req.setAttribute("error",e.getMessage());
+        req.getRequestDispatcher("error.jsp").forward(req, resp);
     }
 
     private String getAction(HttpServletRequest req) {
@@ -89,7 +105,16 @@ public class MainServlet extends HttpServlet {
                 req.getRequestDispatcher("error.jsp").forward(req,resp);
             }
 
-        } else if (action.equals("/mock")){
+        } else if (action.equals("/select")){
+            String command = req.getParameter("command");
+            req.setAttribute("command", command);
+            resp.sendRedirect(resp.encodeRedirectURL("select_result"));
+
+        }  else if (action.equals("/select_mock")){
+            sqlCommand = "select * from employee";
+            resp.sendRedirect(resp.encodeRedirectURL("select_result"));
+
+        }else if (action.equals("/mock")){
 
             try {
                 service.connect2();

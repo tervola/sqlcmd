@@ -6,9 +6,7 @@ import ua.com.juja.tervola.sqlcmd.DbController;
 import ua.com.juja.tervola.sqlcmd.DbControllerImpl;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,13 +25,14 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String> commandsList() {
-        return Arrays.asList("help","menu","connect","mock","list");
+        return Arrays.asList("help","menu","connect","mock","list","select","select_mock");
     }
 
     @Override
     public void connect(String dbName, String userName, String password) throws SQLException {
         connectionManager = new ConnectionManager(configReader.getConnectionStringWithouDB(),dbName, userName,  password);
         connection =  connectionManager.connect();
+        dbController = new DbControllerImpl(connection);
         if(connectionManager != null) {
             isConnected = true;
         }
@@ -45,6 +44,7 @@ public class ServiceImpl implements Service {
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5436/MyDb", "postgres", "Password01");
+            dbController = new DbControllerImpl(connection);
             isConnected = true;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -73,8 +73,13 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String> tableList() throws SQLException {
-
-        dbController = new DbControllerImpl(connection);
         return dbController.tableList();
     }
+
+    @Override
+    public List<String[]> select(String command) throws SQLException {
+       return dbController.select(command);
+    }
+
+
 }
