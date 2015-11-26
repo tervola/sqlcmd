@@ -20,7 +20,7 @@
         </c:forEach>
     </table>
 
-    <p>You can go to  <a href="help">help</a> <br> or  <a href="menu">Menu</a>
+    <%@include file="footer_menu.jsp"%>
     <%@include file="footer.jsp"%>
     </p>
 

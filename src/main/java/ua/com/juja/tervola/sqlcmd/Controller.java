@@ -1,8 +1,5 @@
 package ua.com.juja.tervola.sqlcmd;
 
-import ua.com.juja.tervola.sqlcmd.Informer;
-import ua.com.juja.tervola.sqlcmd.InformerImpl;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -19,31 +16,31 @@ public class Controller {
         configReader = new ConfigReader();
         try {
             connectionManager = new ConnectionManager(configReader.getConnectionString(), configReader.getUserName(), configReader.getPassword());
-            informer = new InformerImpl(connectionManager,configReader);
+            informer = new InformerImpl(connectionManager, configReader);
             informer.print(String.format("Opened database %s successfully", configReader.getDatabaseName()));
             informer.print(String.format("Driver:%s", configReader.getConnectionString()));
-        } catch (Exception e){
+        } catch (Exception e) {
             informer = new InformerImpl(connectionManager, configReader);
             informer.print(e.getClass().getName() + ": " + e.getMessage());
             System.exit(-1);
         }
 
         int code = 0;
-        while (code >=0 ) {
+        while (code >= 0) {
             informer.print("Input command():");
             try {
                 code = informer.parser(new Scanner(System.in).nextLine());
             } catch (SQLException error) {
                 errorHandler(error);
             }
-            if(code == 0) System.err.println("Try again or type \"help\"");
+            if (code == 0) System.err.println("Try again or type \"help\"");
         }
     }
 
     private static void errorHandler(SQLException error) {
         String[] errorMessage = error.getMessage().split("\n");
 
-        for (int i = 0; i < errorMessage.length - 1 ; i++) {
+        for (int i = 0; i < errorMessage.length - 1; i++) {
             System.err.print(errorMessage[i] + ". ");
         }
     }

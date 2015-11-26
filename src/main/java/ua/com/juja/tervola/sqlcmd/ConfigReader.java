@@ -1,11 +1,9 @@
 package ua.com.juja.tervola.sqlcmd;
 
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import java.sql.SQLException;
 import java.util.Properties;
 import java.util.Scanner;
@@ -47,7 +45,7 @@ public class ConfigReader {
             String credentials = new Scanner(System.in).nextLine();
             String[] line = credentials.split("\\|");
 
-            if (line.length == 3){
+            if (line.length == 3) {
                 this.DATABASE_NAME = line[0].trim();
                 this.USER_NAME = line[1].trim();
                 this.PASSWORD = line[2].trim();
@@ -59,14 +57,12 @@ public class ConfigReader {
         fileInputStream.close();
     }
 
-    public String getConnectionString()
-    {
-        return String.format("%s%s:%s/%s",DRIVER,SERVER_NAME,PORT,DATABASE_NAME);
+    public String getConnectionString() {
+        return String.format("%s%s:%s/%s", DRIVER, SERVER_NAME, PORT, DATABASE_NAME);
     }
 
-    public String getConnectionStringWithouDB()
-    {
-        return String.format("%s%s:%s/",DRIVER,SERVER_NAME,PORT);
+    public String getConnectionStringWithouDB() {
+        return String.format("%s%s:%s/", DRIVER, SERVER_NAME, PORT);
     }
 
     public String getUserName() {

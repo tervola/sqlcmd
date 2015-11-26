@@ -33,7 +33,7 @@ public class MyBean {
         return name;
     }
 
-    public void sayHi(){
+    public void sayHi() {
         System.out.println(text + service.getData());
     }
 

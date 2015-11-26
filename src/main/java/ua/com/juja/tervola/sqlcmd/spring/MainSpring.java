@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class MainSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"application-contex.xml"});
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"application-contex.xml"});
         MyBean myBean = (MyBean) context.getBean("rat");
         myBean.sayHi();
         myBean.setText("Zdraste!");

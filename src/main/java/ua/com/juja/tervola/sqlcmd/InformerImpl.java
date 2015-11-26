@@ -21,22 +21,19 @@ public class InformerImpl implements Informer {
         connection = connectionManager.connect();
         dbController = new DbControllerImpl(connection);
 
-        if(this.connectionManager == null){
+        if (this.connectionManager == null) {
             System.out.println(connectionManager);
             System.out.println(this.connectionManager);
         }
 
-        if(this.configReader == null)
-        {
+        if (this.configReader == null) {
             System.out.println(this.configReader.toString());
             System.out.println(configReader);
         }
-        if(connection == null)
-        {
+        if (connection == null) {
             System.out.println(connection);
         }
-        if(dbController == null)
-        {
+        if (dbController == null) {
             System.out.println(dbController);
         }
         print("Type \"help\" for command list or type command: ");
@@ -45,40 +42,40 @@ public class InformerImpl implements Informer {
     @Override
     public void help() {
         print(
-            "\t" + "help: \n\t\tShow this help" + "\n" +
-            "\t" + "exit: \n\t\tOutput from the program" + "\n" +
-            "\t" + "list: \n" +
-            "\t\tList of tables into the database" + "\n" +
-            "\t" + "Select from table: \n" +
-            "\t\tSelect records from table, examples:" + "\n" +
-            "\t\t" + " \"SELECT * FROM name\"" + "\n" +
-            "\t\t" + " \"SELECT * FROM name WHERE id > 1\"" + "\n" +
-            "\t\t" + " \"SELECT id FROM name WHERE id < 1\"" + "\n" +
-            "\t" + "Insert into table: \n" +
-            "\t\t" + " \"INSERT INTO id (id_name,id_temp,country_name) VALUES (3, 'tree', 'UA');\"" + "\n"+
-            "\t\t" + " \"INSERT INTO employee (id,name,alias) VALUES (1, 'Stas', 'tervola');\"" + "\n"+
-            "\t" + "Updating records: \n" +
-            "\t\tupdating records into table" + "\n" +
-            "\t\t" + " \"UPDATE id set country_name = 'Unknown' WHERE country_name ='null';\"" + "\n" +
-            "\t" + "Deleting records: \n" +
-            "\t\t" + " \"DELETE FROM id WHERE id_name = 4;\"" + "\n" +
-            "\t" + "drop: \n" +
-            "\t\t\"DROP TABLE films, distributors;\"" + "\n" +
-            "\t" + "Create table: \n" +
-            "\t\t" + " \"CREATE TABLE COMPANY (ID INT, NAME TEXT NOT NULL, AGE INT NOT NULL)\";"
+                "\t" + "help: \n\t\tShow this help" + "\n" +
+                        "\t" + "exit: \n\t\tOutput from the program" + "\n" +
+                        "\t" + "list: \n" +
+                        "\t\tList of tables into the database" + "\n" +
+                        "\t" + "Select from table: \n" +
+                        "\t\tSelect records from table, examples:" + "\n" +
+                        "\t\t" + " \"SELECT * FROM name\"" + "\n" +
+                        "\t\t" + " \"SELECT * FROM name WHERE id > 1\"" + "\n" +
+                        "\t\t" + " \"SELECT id FROM name WHERE id < 1\"" + "\n" +
+                        "\t" + "Insert into table: \n" +
+                        "\t\t" + " \"INSERT INTO id (id_name,id_temp,country_name) VALUES (3, 'tree', 'UA');\"" + "\n" +
+                        "\t\t" + " \"INSERT INTO employee (id,name,alias) VALUES (1, 'Stas', 'tervola');\"" + "\n" +
+                        "\t" + "Updating records: \n" +
+                        "\t\tupdating records into table" + "\n" +
+                        "\t\t" + " \"UPDATE id set country_name = 'Unknown' WHERE country_name ='null';\"" + "\n" +
+                        "\t" + "Deleting records: \n" +
+                        "\t\t" + " \"DELETE FROM id WHERE id_name = 4;\"" + "\n" +
+                        "\t" + "drop: \n" +
+                        "\t\t\"DROP TABLE films, distributors;\"" + "\n" +
+                        "\t" + "Create table: \n" +
+                        "\t\t" + " \"CREATE TABLE COMPANY (ID INT, NAME TEXT NOT NULL, AGE INT NOT NULL)\";"
         );
     }
 
     @Override
-    public void print(String string){
+    public void print(String string) {
         System.out.println(string);
     }
 
     @Override
-    public void printTable(ArrayList<String[]> table){
+    public void printTable(ArrayList<String[]> table) {
         for (String[] line : table) {
-            String formater = createFormater (line.length);
-            System.out.format(formater, line[0] , line[1], line[2]);
+            String formater = createFormater(line.length);
+            System.out.format(formater, line[0], line[1], line[2]);
         }
     }
 
@@ -91,13 +88,13 @@ public class InformerImpl implements Informer {
     }
 
     @Override
-    public int parser(String string) throws SQLException{
+    public int parser(String string) throws SQLException {
 
         int rval = 0;
         if (string.trim().length() == 0 || string.isEmpty()) return rval;
         string = string.toLowerCase();
 
-        if (string.equals("help")){
+        if (string.equals("help")) {
             this.help();
             rval = 1;
         } else if (string.equals("exit")) {
@@ -111,18 +108,17 @@ public class InformerImpl implements Informer {
                     configReader.getServername(),
                     configReader.getPortNumber()));
             int index = 1;
-            for (String s : dbController.tableList())
-            {
+            for (String s : dbController.tableList()) {
                 print(String.valueOf(index++) + "." + s);
             }
             rval = 1;
-        } else if (string.startsWith("select"))  {
+        } else if (string.startsWith("select")) {
             print(String.format("\nResult: \"%s\"", string));
             printTable(dbController.select(string));
             rval = 1;
         } else {
             dbController.executeCommand(string);
-            print(String.format("%s command was successfully!!!",string.split(" ")[0]));
+            print(String.format("%s command was successfully!!!", string.split(" ")[0]));
             rval = 1;
         }
         return rval;

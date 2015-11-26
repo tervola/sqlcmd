@@ -1,6 +1,5 @@
 package ua.com.juja.tervola.sqlcmd.web;
 
-import ua.com.juja.tervola.sqlcmd.ConnectionManager;
 import ua.com.juja.tervola.sqlcmd.service.Service;
 import ua.com.juja.tervola.sqlcmd.service.ServiceImpl;
 
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.util.Arrays;
 
@@ -36,49 +34,69 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String action = getAction(req);
-        req.setAttribute("items",service.commandsList());
-
-        //ConnectionManager connectionManager = (ConnectionManager) req.getSession().getAttribute("db_manager");
-
+        if (service.isConnected()) {
+            req.setAttribute("items", service.commandsList());
+        } else {
+            req.setAttribute("items", service.connectionCommandsList());
+        }
 
         if (action.equals("/menu")) {
+
             req.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
             req.setAttribute("dbname", service.getConfigReader().getDatabaseName());
             req.setAttribute("username", service.getConfigReader().getUserName());
             req.getRequestDispatcher("menu.jsp").forward(req, resp);
-        } else if (action.equals("/help")){
+
+        } else if (action.equals("/help")) {
+
             req.getRequestDispatcher("help.jsp").forward(req, resp);
-        }else if (action.equals("/connect")){
+
+        } else if (action.equals("/connect")) {
+
             req.getRequestDispatcher("connect.jsp").forward(req, resp);
-        }else if (action.equals("/mock")) {
+
+        } else if (action.equals("/mock")) {
+
             req.getRequestDispatcher("mock.jsp").forward(req, resp);
-        }else if (action.equals("/select")) {
+
+        } else if (action.equals("/select")) {
+
             req.getRequestDispatcher("select.jsp").forward(req, resp);
-        }else if (action.equals("/select_mock")) {
+        } else if (action.equals("/select_mock")) {
             req.getRequestDispatcher("select_mock.jsp").forward(req, resp);
-        }else if (action.equals("/select_result")) {
+        } else if (action.equals("/execute")) {
+            req.getRequestDispatcher("execute.jsp").forward(req, resp);
+        } else if (action.equals("/execute_result")) {
             try {
-                req.setAttribute("select",service.select(sqlCommand));
+                service.executeCommand(sqlCommand);
+                req.setAttribute("execute", sqlCommand);
+            } catch (SQLException e) {
+                redirectToErrorPage(req, resp, e);
+            }
+            req.getRequestDispatcher("execute_result.jsp").forward(req, resp);
+        } else if (action.equals("/select_result")) {
+            try {
+                req.setAttribute("select", service.select(sqlCommand));
             } catch (SQLException e) {
                 redirectToErrorPage(req, resp, e);
             }
             req.getRequestDispatcher("select_result.jsp").forward(req, resp);
-        }else if (action.equals("/list")) {
+        } else if (action.equals("/list")) {
             try {
                 req.setAttribute("tablelist", service.tableList());
             } catch (SQLException e) {
                 redirectToErrorPage(req, resp, e);
             }
             req.getRequestDispatcher("list.jsp").forward(req, resp);
-        }else {
+        } else {
             req.getRequestDispatcher("error.jsp").forward(req, resp);
         }
 
     }
 
-    private void redirectToErrorPage(HttpServletRequest req, HttpServletResponse resp, SQLException e) throws ServletException, IOException {
+    private void redirectToErrorPage(HttpServletRequest req, HttpServletResponse resp, Exception e) throws ServletException, IOException {
         e.printStackTrace();
-        req.setAttribute("error",e.getMessage());
+        req.setAttribute("error", e.getMessage());
         req.getRequestDispatcher("error.jsp").forward(req, resp);
     }
 
@@ -91,10 +109,11 @@ public class MainServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = getAction(req);
 
-        if (action.equals("/connect")){
-            String dbName =  req.getParameter("dbname");
-            String userName =  req.getParameter("username");
-            String password =  req.getParameter("password");
+        if (action.equals("/connect")) {
+
+            String dbName = req.getParameter("dbname");
+            String userName = req.getParameter("username");
+            String password = req.getParameter("password");
 
             try {
                 service.connect(dbName, userName, password);
@@ -102,19 +121,25 @@ public class MainServlet extends HttpServlet {
                 resp.sendRedirect(resp.encodeRedirectURL("menu"));
             } catch (Exception e) {
                 req.setAttribute("message", e.getMessage());
-                req.getRequestDispatcher("error.jsp").forward(req,resp);
+                req.getRequestDispatcher("error.jsp").forward(req, resp);
             }
 
-        } else if (action.equals("/select")){
-            String command = req.getParameter("command");
-            req.setAttribute("command", command);
+        } else if (action.equals("/select")) {
+
+            sqlCommand = req.getParameter("command");
             resp.sendRedirect(resp.encodeRedirectURL("select_result"));
 
-        }  else if (action.equals("/select_mock")){
+        } else if (action.equals("/execute")) {
+
+            sqlCommand = req.getParameter("command");
+            resp.sendRedirect(resp.encodeRedirectURL("execute_result"));
+
+        } else if (action.equals("/select_mock")) {
+
             sqlCommand = "select * from employee";
             resp.sendRedirect(resp.encodeRedirectURL("select_result"));
 
-        }else if (action.equals("/mock")){
+        } else if (action.equals("/mock")) {
 
             try {
                 service.connect2();
@@ -127,8 +152,9 @@ public class MainServlet extends HttpServlet {
                 } catch (SQLException e1) {
                     e1.printStackTrace();
                 }
+
                 req.setAttribute("message", e.getMessage());
-                req.getRequestDispatcher("error.jsp").forward(req,resp);
+                req.getRequestDispatcher("error.jsp").forward(req, resp);
             }
         }
     }

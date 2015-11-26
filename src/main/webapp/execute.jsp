@@ -5,15 +5,17 @@
         <title>SQLCmd</title>
     </head>
     <body>
-    <form action="select" method="post">
+    <form action="execute" method="post">
+        <p>You can execute command: UPDATE, INSERT or DELETE (see help for additional information).
+        </p>
         <table>
             <tr>
                 <td>Input command:</td>
-                <td><input type="text" name="command"></td>
+                <td><input type="text" name="command" size="35"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Execute"></td>
+                <td><input type="submit" value="Execute!"></td>
             </tr>
         </table>
     </form>

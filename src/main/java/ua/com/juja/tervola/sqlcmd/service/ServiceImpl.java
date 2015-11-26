@@ -6,8 +6,9 @@ import ua.com.juja.tervola.sqlcmd.DbController;
 import ua.com.juja.tervola.sqlcmd.DbControllerImpl;
 
 import java.io.IOException;
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,15 +26,20 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String> commandsList() {
-        return Arrays.asList("help","menu","connect","mock","list","select","select_mock");
+        return Arrays.asList("help", "list", "select", "select_mock", "execute");
+    }
+
+    @Override
+    public Object connectionCommandsList() {
+        return Arrays.asList("connect", "mock");
     }
 
     @Override
     public void connect(String dbName, String userName, String password) throws SQLException {
-        connectionManager = new ConnectionManager(configReader.getConnectionStringWithouDB(),dbName, userName,  password);
-        connection =  connectionManager.connect();
+        connectionManager = new ConnectionManager(configReader.getConnectionStringWithouDB(), dbName, userName, password);
+        connection = connectionManager.connect();
         dbController = new DbControllerImpl(connection);
-        if(connectionManager != null) {
+        if (connectionManager != null) {
             isConnected = true;
         }
     }
@@ -57,7 +63,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public boolean isConnected(){
+    public boolean isConnected() {
         return isConnected;
     }
 
@@ -67,7 +73,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public ConfigReader getConfigReader(){
+    public ConfigReader getConfigReader() {
         return configReader;
     }
 
@@ -78,8 +84,11 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String[]> select(String command) throws SQLException {
-       return dbController.select(command);
+        return dbController.select(command);
     }
 
-
+    @Override
+    public void executeCommand(String command) throws SQLException {
+        dbController.executeCommand(command);
+    }
 }

@@ -7,7 +7,7 @@
 <body>
 Ohhh!<br>Can't load this page.<br>
 ${message}<br>
-Go to <a href="help">help</a> <br> or  <a href="menu">Menu</a>
+<%@include file="footer_menu.jsp"%>
 <%@include file="footer.jsp"%>
 </body>
 </html>

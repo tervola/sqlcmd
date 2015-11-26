@@ -9,10 +9,11 @@
         <table>
             <tr>
                 <td>"SELECT * FROM id"</td>
-                <td><input type="submit" name="command_mock"></td>
+                <td><input type="submit" name="command_mock" value="Execute"></td>
             </tr>
         </table>
     </form>
+    <%@include file="footer_menu.jsp"%>
     <%@include file="footer.jsp"%>
 </body>
 </html>

@@ -3,7 +3,6 @@ package ua.com.juja.tervola.sqlcmd;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 /**
  * Created by user on 9/18/2015.
@@ -28,10 +27,10 @@ public class ConnectionManager {
 
     public Connection connect() throws SQLException {
         connection = DriverManager.getConnection(connectionString, userName, password);
-        return  connection;
+        return connection;
     }
 
-    public void close() throws SQLException{
+    public void close() throws SQLException {
         connect().close();
     }
 }

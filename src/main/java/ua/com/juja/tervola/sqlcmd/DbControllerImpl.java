@@ -2,7 +2,6 @@ package ua.com.juja.tervola.sqlcmd;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by user on 8/28/2015.
@@ -16,7 +15,7 @@ public class DbControllerImpl implements DbController {
     }
 
     @Override
-    public ArrayList<String> tableList() throws SQLException{
+    public ArrayList<String> tableList() throws SQLException {
         ArrayList<String> rval = new ArrayList<String>();
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
@@ -27,11 +26,11 @@ public class DbControllerImpl implements DbController {
     }
 
     @Override
-    public ArrayList<String[]> select(String sql) throws SQLException{
+    public ArrayList<String[]> select(String sql) throws SQLException {
 
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
-        ArrayList<String[]> table =  createTable(rs);
+        ArrayList<String[]> table = createTable(rs);
         stmt.close();
 
         return table;
@@ -43,21 +42,20 @@ public class DbControllerImpl implements DbController {
     }
 
 
-
-    public void doUpdateExecution( String str) throws SQLException {
+    public void doUpdateExecution(String str) throws SQLException {
         Statement stmt = connection.createStatement();
         stmt.executeUpdate(str);
         stmt.close();
     }
 
-    private ArrayList<String []> createTable(ResultSet resultSet) throws SQLException {
-        ArrayList<String []> list = new ArrayList<String[]>();
+    private ArrayList<String[]> createTable(ResultSet resultSet) throws SQLException {
+        ArrayList<String[]> list = new ArrayList<String[]>();
         int columnCount = resultSet.getMetaData().getColumnCount();
-        if (columnCount < 0 ) return null;
+        if (columnCount < 0) return null;
 
         list.add(createTitle(resultSet, columnCount));
 
-        while(resultSet.next()) {
+        while (resultSet.next()) {
             list.add(createBody(resultSet, columnCount));
         }
         return list;
@@ -73,12 +71,13 @@ public class DbControllerImpl implements DbController {
         }
         return tableTitles;
     }
+
     private String[] createBody(ResultSet resultSet, int columnCount) throws SQLException {
 
-        String[] rval = new String[columnCount] ;
+        String[] rval = new String[columnCount];
 
-        for (int i = 1; i <= columnCount ; i++) {
-            rval[i-1] = resultSet.getString(i);
+        for (int i = 1; i <= columnCount; i++) {
+            rval[i - 1] = resultSet.getString(i);
         }
         return rval;
     }
