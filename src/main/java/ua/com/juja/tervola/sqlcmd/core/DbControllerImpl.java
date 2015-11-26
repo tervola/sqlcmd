@@ -1,4 +1,4 @@
-package ua.com.juja.tervola.sqlcmd;
+package ua.com.juja.tervola.sqlcmd.core;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,18 +1,15 @@
 package ua.com.juja.tervola.sqlcmd.service;
 
-import ua.com.juja.tervola.sqlcmd.ConfigReader;
-import ua.com.juja.tervola.sqlcmd.ConnectionManager;
-import ua.com.juja.tervola.sqlcmd.DbController;
-import ua.com.juja.tervola.sqlcmd.DbControllerImpl;
+import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
+import ua.com.juja.tervola.sqlcmd.core.ConnectionManager;
+import ua.com.juja.tervola.sqlcmd.core.DbController;
+import ua.com.juja.tervola.sqlcmd.core.DbControllerImpl;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 

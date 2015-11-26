@@ -1,4 +1,6 @@
-package ua.com.juja.tervola.sqlcmd;
+package ua.com.juja.tervola.sqlcmd.console;
+
+import ua.com.juja.tervola.sqlcmd.core.Controller;
 
 import java.io.IOException;
 import java.sql.SQLException;

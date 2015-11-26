@@ -1,4 +1,4 @@
-package ua.com.juja.tervola.sqlcmd;
+package ua.com.juja.tervola.sqlcmd.console;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

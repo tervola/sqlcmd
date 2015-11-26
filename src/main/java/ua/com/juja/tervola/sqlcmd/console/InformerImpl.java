@@ -1,4 +1,8 @@
-package ua.com.juja.tervola.sqlcmd;
+package ua.com.juja.tervola.sqlcmd.console;
+
+import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
+import ua.com.juja.tervola.sqlcmd.core.ConnectionManager;
+import ua.com.juja.tervola.sqlcmd.core.DbControllerImpl;
 
 import java.io.IOException;
 import java.sql.Connection;

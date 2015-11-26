@@ -50,31 +50,31 @@ public class MainServlet extends HttpServlet {
             req.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
             req.setAttribute("dbname", service.getConfigReader().getDatabaseName());
             req.setAttribute("username", service.getConfigReader().getUserName());
-            req.getRequestDispatcher("menu.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/menu.jsp").forward(req, resp);
 
         } else if (action.equals("/help")) {
 
-            req.getRequestDispatcher("help.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/help.jsp").forward(req, resp);
 
         } else if (action.equals("/connect")) {
 
-            req.getRequestDispatcher("connect.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/connect.jsp").forward(req, resp);
 
         }else if (action.equals("/log_clean")) {
 
-            req.getRequestDispatcher("log_clean.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/log_clean.jsp").forward(req, resp);
 
         } else if (action.equals("/mock")) {
 
-            req.getRequestDispatcher("mock.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/mock.jsp").forward(req, resp);
 
         } else if (action.equals("/select")) {
 
-            req.getRequestDispatcher("select.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/select.jsp").forward(req, resp);
         } else if (action.equals("/select_mock")) {
-            req.getRequestDispatcher("select_mock.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/select_mock.jsp").forward(req, resp);
         } else if (action.equals("/execute")) {
-            req.getRequestDispatcher("execute.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/execute.jsp").forward(req, resp);
         } else if (action.equals("/execute_result")) {
             try {
                 service.executeCommand(sqlCommand);
@@ -89,16 +89,16 @@ public class MainServlet extends HttpServlet {
             } catch (SQLException e) {
                 redirectToErrorPage(req, resp, e);
             }
-            req.getRequestDispatcher("select_result.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/select_result.jsp").forward(req, resp);
         } else if (action.equals("/list")) {
             try {
                 req.setAttribute("tablelist", service.tableList());
             } catch (SQLException e) {
                 redirectToErrorPage(req, resp, e);
             }
-            req.getRequestDispatcher("list.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/list.jsp").forward(req, resp);
         } else {
-            req.getRequestDispatcher("error.jsp").forward(req, resp);
+            req.getRequestDispatcher("jspproject/error.jsp").forward(req, resp);
         }
 
     }
@@ -130,7 +130,7 @@ public class MainServlet extends HttpServlet {
                 resp.sendRedirect(resp.encodeRedirectURL("menu"));
             } catch (Exception e) {
                 req.setAttribute("message", e.getMessage());
-                req.getRequestDispatcher("error.jsp").forward(req, resp);
+                req.getRequestDispatcher("jspproject/error.jsp").forward(req, resp);
             }
 
         } else if (action.equals("/select")) {
@@ -172,7 +172,7 @@ public class MainServlet extends HttpServlet {
                 }
 
                 req.setAttribute("message", e.getMessage());
-                req.getRequestDispatcher("error.jsp").forward(req, resp);
+                req.getRequestDispatcher("jspproject/error.jsp").forward(req, resp);
             }
         }
     }

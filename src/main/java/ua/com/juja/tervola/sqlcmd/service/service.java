@@ -1,6 +1,6 @@
 package ua.com.juja.tervola.sqlcmd.service;
 
-import ua.com.juja.tervola.sqlcmd.ConfigReader;
+import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
 
 import java.sql.SQLException;
 import java.util.List;
