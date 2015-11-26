@@ -36,6 +36,11 @@ public class MainServlet extends HttpServlet {
         String action = getAction(req);
         if (service.isConnected()) {
             req.setAttribute("items", service.commandsList());
+            if (service.isLoggingEnabled()){
+                req.setAttribute("logs", "enabling logs");
+            } else {
+                req.setAttribute("logs", "clean logs");
+            }
         } else {
             req.setAttribute("items", service.connectionCommandsList());
         }
@@ -54,6 +59,10 @@ public class MainServlet extends HttpServlet {
         } else if (action.equals("/connect")) {
 
             req.getRequestDispatcher("connect.jsp").forward(req, resp);
+
+        }else if (action.equals("/log_clean")) {
+
+            req.getRequestDispatcher("log_clean.jsp").forward(req, resp);
 
         } else if (action.equals("/mock")) {
 
@@ -139,7 +148,16 @@ public class MainServlet extends HttpServlet {
             sqlCommand = "select * from employee";
             resp.sendRedirect(resp.encodeRedirectURL("select_result"));
 
-        } else if (action.equals("/mock")) {
+        } else if (action.equals("/logs")) {
+
+            try {
+                service.enablingLog(true);
+                resp.sendRedirect(resp.encodeRedirectURL("menu"));
+            } catch (Exception e) {
+                redirectToErrorPage(req,resp,e);
+            }
+
+        }else if (action.equals("/mock")) {
 
             try {
                 service.connect2();

@@ -6,7 +6,7 @@
     </head>
     <body>
     <form action="execute" method="post">
-        <p>You can execute command: UPDATE, INSERT or DELETE (see help for additional information).
+        <p>You can execute command: UPDATE, INSERT, CREATE TABLE or DELETE  (see help for additional information).
         </p>
         <table>
             <tr>

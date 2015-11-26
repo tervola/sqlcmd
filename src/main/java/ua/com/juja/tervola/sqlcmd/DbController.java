@@ -14,4 +14,6 @@ public interface DbController {
 
     void executeCommand(String sql) throws SQLException;
 
+    boolean isExistLogTable() throws SQLException;
+
 }

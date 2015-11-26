@@ -9,9 +9,22 @@ import java.util.ArrayList;
 public class DbControllerImpl implements DbController {
 
     Connection connection;
+    boolean isExistLogTable = false;
 
     public DbControllerImpl(Connection connection) {
         this.connection = connection;
+    }
+
+    @Override
+    public boolean isExistLogTable() throws SQLException {
+        DatabaseMetaData md = connection.getMetaData();
+        ResultSet rs = md.getTables(null, "public", null, null);
+        while (rs.next()) {
+            if (rs.getString(3).equals("logs")){
+                isExistLogTable = true;
+            }
+        }
+        return isExistLogTable;
     }
 
     @Override
@@ -20,6 +33,9 @@ public class DbControllerImpl implements DbController {
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
         while (rs.next()) {
+            if (rs.getString(3).equals("logs")){
+                isExistLogTable = true;
+            }
             rval.add(rs.getString(3));
         }
         return rval;

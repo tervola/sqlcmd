@@ -9,7 +9,10 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 
@@ -19,6 +22,26 @@ public class ServiceImpl implements Service {
     private DbController dbController;
     private Connection connection;
     private boolean isConnected = false;
+    private boolean isLoggingEnabled = false;
+
+    @Override
+    public void enablingLog(boolean cleanFlag) throws SQLException {
+        if (dbController.isExistLogTable() && cleanFlag){
+            dbController.executeCommand("TRUNCATE logs");
+        } else {
+            dbController.executeCommand("CREATE TABLE logs (id SERIAL, timestamp timestamp, Description text");
+        }
+    }
+
+    @Override
+    public boolean isLoggingEnabled(){
+        return isLoggingEnabled;
+    }
+
+    @Override
+    public void setIsLoggingEnabled(boolean isLoggingEnabled) {
+        this.isLoggingEnabled = isLoggingEnabled;
+    }
 
     public ServiceImpl() throws IOException, SQLException {
         configReader = new ConfigReader();
@@ -30,7 +53,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public Object connectionCommandsList() {
+    public List<String> connectionCommandsList() {
         return Arrays.asList("connect", "mock");
     }
 
@@ -84,11 +107,19 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String[]> select(String command) throws SQLException {
-        return dbController.select(command);
+        List<String[]> rval = dbController.select(command);
+        addLog(command);
+        return rval;
+
     }
 
     @Override
     public void executeCommand(String command) throws SQLException {
         dbController.executeCommand(command);
+        addLog(command);
+    }
+
+    private void addLog(String command) throws SQLException {
+        dbController.executeCommand(String.format("INSERT INTO logs(\"timestamp\", \"Details\")VALUES (CURRENT_TIMESTAMP, \'%s\')",command));
     }
 }

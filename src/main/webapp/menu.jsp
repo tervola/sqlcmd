@@ -9,6 +9,8 @@
         <a href="${item}">${item}</a> <br>
     </c:forEach>
     <br>
+    <a href="log_clean">${logs}</a> <br>
+    <br>
     <table style="font-size: small">
         <tr>
             <td>Connection status:</td>

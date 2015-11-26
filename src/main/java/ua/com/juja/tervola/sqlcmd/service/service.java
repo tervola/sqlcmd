@@ -29,5 +29,11 @@ public interface Service {
 
     void executeCommand(String command) throws SQLException;
 
-    Object connectionCommandsList();
+    List<String> connectionCommandsList();
+
+    void enablingLog(boolean cleanFlag) throws SQLException;
+
+    boolean isLoggingEnabled();
+
+    void setIsLoggingEnabled(boolean isLoggingEnabled);
 }
