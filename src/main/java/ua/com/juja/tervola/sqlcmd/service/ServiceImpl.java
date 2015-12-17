@@ -51,7 +51,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String> connectionCommandsList() {
-        return Arrays.asList("connect", "mock");
+        return Arrays.asList("help","connect", "mock");
     }
 
     @Override
