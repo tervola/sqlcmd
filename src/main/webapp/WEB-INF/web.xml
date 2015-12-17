@@ -19,24 +19,24 @@
         </listener-class>
     </listener>
 
-    <!--<servlet>-->
-        <!--<servlet-name>servlet</servlet-name>-->
-        <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
-    <!--</servlet>-->
-
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>servlet</servlet-name>-->
-        <!--<url-pattern>/</url-pattern>-->
-    <!--</servlet-mapping>-->
-
     <servlet>
-        <servlet-name>MainServlet</servlet-name>
-        <servlet-class>ua.com.juja.tervola.sqlcmd.web.MainServlet</servlet-class>
+        <servlet-name>main</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>MainServlet</servlet-name>
+        <servlet-name>main</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <!--<servlet>-->
+        <!--<servlet-name>MainServlet</servlet-name>-->
+        <!--<servlet-class>ua.com.juja.tervola.sqlcmd.web.MainServlet</servlet-class>-->
+    <!--</servlet>-->
+
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>MainServlet</servlet-name>-->
+        <!--<url-pattern>/</url-pattern>-->
+    <!--</servlet-mapping>-->
 
 </web-app>
