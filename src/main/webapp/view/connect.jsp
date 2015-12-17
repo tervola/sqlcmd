@@ -23,6 +23,7 @@
                 <td><input type="submit" name="connect"></td>
             </tr>
         </table>
+
         <%@include file="footer_menu.jsp"%>
         <%@include file="footer.jsp"%>
     </form>

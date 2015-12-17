@@ -7,11 +7,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class MainSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"application-contex.xml"});
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"prop/application-context.xml"});
         MyBean myBean = (MyBean) context.getBean("rat");
         myBean.sayHi();
         myBean.setText("Zdraste!");
-        myBean.sayHi();
         System.out.println(myBean.getName());
+        System.out.println(myBean.getText());
+        System.out.println("---");
+//        System.out.println(myBean.get);
     }
 }

@@ -1,6 +1,8 @@
 package ua.com.juja.tervola.sqlcmd.core;
 
 
+import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,6 +14,7 @@ import java.util.Scanner;
 /**
  * Created by user on 9/29/2015.
  */
+@Component
 public class ConfigReader {
     private String SERVER_NAME;
     private String DATABASE_NAME;

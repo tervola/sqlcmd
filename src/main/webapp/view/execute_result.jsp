@@ -5,8 +5,8 @@
         <title>SQLCmd</title>
     </head>
     <body>
-    Execute result: "${execute}"  was successfully!<br>
-    Execute again: <a href="execute.jsp">Go to execute page</a>
+    Execute result: "${execute}"  was ${result}!<br>
+    ${error}<br>
     <%@include file="footer_menu.jsp"%>
     <%@include file="footer.jsp"%>
     </p>

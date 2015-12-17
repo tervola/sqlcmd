@@ -19,6 +19,10 @@
             </tr>
         </table>
     </form>
+    <p> Examples:
+    <ul>
+        <li>INSERT INTO id VALUES (224, 'mock', 'mock')
+    </ul>
     <%@include file="footer_menu.jsp"%>
     <%@include file="footer.jsp"%>
 </body>

@@ -11,6 +11,7 @@
     <br>
     <a href="log_clean">${logs}</a> <br>
     <br>
+    <h5>${message}</h5>
     <table style="font-size: small">
         <tr>
             <td>Connection status:</td>
@@ -25,6 +26,7 @@
             <td>${username}</td>
         </tr>
     </table>
+
     <%@include file="footer.jsp"%>
 
 </body>

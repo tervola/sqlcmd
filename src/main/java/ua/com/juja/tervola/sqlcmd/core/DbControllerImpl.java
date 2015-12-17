@@ -60,6 +60,7 @@ public class DbControllerImpl implements DbController {
 
     public void doUpdateExecution(String str) throws SQLException {
         Statement stmt = connection.createStatement();
+        //PreparedStatement stmt = connection.
         stmt.executeUpdate(str);
         stmt.close();
     }

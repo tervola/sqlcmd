@@ -9,6 +9,7 @@ import java.util.List;
  * Created by user on 11/12/2015.
  */
 public interface Service {
+
     List<String> commandsList();
 
     void connect(String dbName, String userName, String password) throws SQLException;
@@ -36,4 +37,6 @@ public interface Service {
     boolean isLoggingEnabled();
 
     void setIsLoggingEnabled(boolean isLoggingEnabled);
+
+    void closeConnection() throws SQLException;
 }

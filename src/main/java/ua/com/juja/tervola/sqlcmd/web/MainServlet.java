@@ -1,8 +1,11 @@
 package ua.com.juja.tervola.sqlcmd.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+import ua.com.juja.tervola.sqlcmd.service.MessageText;
 import ua.com.juja.tervola.sqlcmd.service.Service;
-import ua.com.juja.tervola.sqlcmd.service.ServiceImpl;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,19 +18,17 @@ import java.util.Arrays;
  * Created by user on 11/6/2015.
  */
 public class MainServlet extends HttpServlet {
+
+    @Autowired
     Service service;
+    @Autowired
+    MessageText messageText;
     String sqlCommand;
 
     @Override
-    public void init() throws ServletException {
-        super.init();
-        try {
-            service = new ServiceImpl();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public void init(final ServletConfig config) throws ServletException {
+        super.init(config);
+        SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this,config.getServletContext());
     }
 
     @Override
@@ -37,11 +38,12 @@ public class MainServlet extends HttpServlet {
         if (service.isConnected()) {
             req.setAttribute("items", service.commandsList());
             if (service.isLoggingEnabled()){
-                req.setAttribute("logs", "enabling logs");
+                req.setAttribute("logs", messageText.getTextLogsEnablind());
             } else {
-                req.setAttribute("logs", "clean logs");
+                req.setAttribute("logs",  messageText.getTextLogsClean());
             }
         } else {
+            req.setAttribute("message", messageText.getTextMockConnections());
             req.setAttribute("items", service.connectionCommandsList());
         }
 
@@ -50,63 +52,110 @@ public class MainServlet extends HttpServlet {
             req.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
             req.setAttribute("dbname", service.getConfigReader().getDatabaseName());
             req.setAttribute("username", service.getConfigReader().getUserName());
-            req.getRequestDispatcher("jspproject/menu.jsp").forward(req, resp);
 
-        } else if (action.equals("/help")) {
+            redirectToPage(Pages.MENU, req, resp);
 
-            req.getRequestDispatcher("jspproject/help.jsp").forward(req, resp);
+        }
+        else if (action.equals("/execute_mock")) {
+
+            redirectToPage(Pages.EXECUTE_MOCK, req, resp);
+
+        }
+        else if (action.equals("/help")) {
+
+            redirectToPage(Pages.HELP, req, resp);
 
         } else if (action.equals("/connect")) {
 
-            req.getRequestDispatcher("jspproject/connect.jsp").forward(req, resp);
+            redirectToPage(Pages.CONNECT, req, resp);
 
         }else if (action.equals("/log_clean")) {
 
-            req.getRequestDispatcher("jspproject/log_clean.jsp").forward(req, resp);
+            redirectToPage(Pages.CLEAN_LOGS, req, resp);
 
         } else if (action.equals("/mock")) {
 
-            req.getRequestDispatcher("jspproject/mock.jsp").forward(req, resp);
+            redirectToPage(Pages.MOCK, req, resp);
 
         } else if (action.equals("/select")) {
 
-            req.getRequestDispatcher("jspproject/select.jsp").forward(req, resp);
+            redirectToPage(Pages.SELECT, req, resp);
+
+        } else if (action.equals("/disconnect")) {
+
+            try {
+
+                service.closeConnection();
+                service.setConnectedStatus(false);
+                req.setAttribute("items", service.connectionCommandsList());
+                redirectToPage(Pages.MENU, req, resp);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         } else if (action.equals("/select_mock")) {
-            req.getRequestDispatcher("jspproject/select_mock.jsp").forward(req, resp);
+
+            redirectToPage(Pages.SELECT_MOCK, req, resp);
+
         } else if (action.equals("/execute")) {
-            req.getRequestDispatcher("jspproject/execute.jsp").forward(req, resp);
+
+            redirectToPage(Pages.EXECUTE, req, resp);
+
         } else if (action.equals("/execute_result")) {
+
             try {
                 service.executeCommand(sqlCommand);
                 req.setAttribute("execute", sqlCommand);
+                req.setAttribute("result", "successfully");
             } catch (SQLException e) {
-                redirectToErrorPage(req, resp, e);
+                req.setAttribute("result", "FAIL");
+                req.setAttribute("error", e.getMessage());
             }
-            req.getRequestDispatcher("execute_result.jsp").forward(req, resp);
+            redirectToPage(Pages.EXECUTE_RESULT, req, resp);
+
         } else if (action.equals("/select_result")) {
+
             try {
+
                 req.setAttribute("select", service.select(sqlCommand));
+
             } catch (SQLException e) {
                 redirectToErrorPage(req, resp, e);
             }
-            req.getRequestDispatcher("jspproject/select_result.jsp").forward(req, resp);
+
+            redirectToPage(Pages.SELECT_RESULTS, req, resp);
+
         } else if (action.equals("/list")) {
+
             try {
                 req.setAttribute("tablelist", service.tableList());
             } catch (SQLException e) {
                 redirectToErrorPage(req, resp, e);
             }
-            req.getRequestDispatcher("jspproject/list.jsp").forward(req, resp);
+
+            redirectToPage(Pages.LIST, req, resp);
+
         } else {
-            req.getRequestDispatcher("jspproject/error.jsp").forward(req, resp);
+            if(service.isConnected()) {
+                redirectToPage(Pages.ERROR, req, resp);
+            } else
+            {
+                redirectToPage(Pages.MENU,req,resp);
+            }
         }
 
     }
 
+    private void redirectToPage(Pages page, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher(page.toString()).forward(req, resp);
+    }
+
+
     private void redirectToErrorPage(HttpServletRequest req, HttpServletResponse resp, Exception e) throws ServletException, IOException {
         e.printStackTrace();
         req.setAttribute("error", e.getMessage());
-        req.getRequestDispatcher("error.jsp").forward(req, resp);
+        redirectToPage(Pages.ERROR, req, resp);
     }
 
     private String getAction(HttpServletRequest req) {
@@ -130,10 +179,17 @@ public class MainServlet extends HttpServlet {
                 resp.sendRedirect(resp.encodeRedirectURL("menu"));
             } catch (Exception e) {
                 req.setAttribute("message", e.getMessage());
-                req.getRequestDispatcher("jspproject/error.jsp").forward(req, resp);
+                redirectToPage(Pages.ERROR, req, resp);
             }
 
-        } else if (action.equals("/select")) {
+        }
+        else if (action.equals("/execute_mock")) {
+
+            sqlCommand = messageText.getCommandExecuteMock();
+            resp.sendRedirect(resp.encodeRedirectURL("execute_result"));
+
+        }
+        else if (action.equals("/select")) {
 
             sqlCommand = req.getParameter("command");
             resp.sendRedirect(resp.encodeRedirectURL("select_result"));
@@ -141,30 +197,36 @@ public class MainServlet extends HttpServlet {
         } else if (action.equals("/execute")) {
 
             sqlCommand = req.getParameter("command");
-            resp.sendRedirect(resp.encodeRedirectURL("execute_result"));
+            try {
+                resp.sendRedirect(resp.encodeRedirectURL("execute_result"));
+            } catch (Exception e)
+            {
+                redirectToErrorPage(req,resp,e);
+            }
 
         } else if (action.equals("/select_mock")) {
 
-            sqlCommand = "select * from employee";
+            sqlCommand = messageText.getCommandSelectMock();
             resp.sendRedirect(resp.encodeRedirectURL("select_result"));
 
         } else if (action.equals("/logs")) {
 
             try {
                 service.enablingLog(true);
-                resp.sendRedirect(resp.encodeRedirectURL("menu"));
-            } catch (Exception e) {
-                redirectToErrorPage(req,resp,e);
+            } catch (SQLException e) {
+                redirectToErrorPage(req, resp,e);
             }
 
-        }else if (action.equals("/mock")) {
+            resp.sendRedirect(resp.encodeRedirectURL("menu"));
+
+        } else if (action.equals("/mock")) {
 
             try {
                 service.connect2();
                 service.setConnectedStatus(true);
                 req.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
                 resp.sendRedirect(resp.encodeRedirectURL("menu"));
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 try {
                     throw new SQLException(Arrays.toString(e.getStackTrace()));
                 } catch (SQLException e1) {
@@ -172,7 +234,7 @@ public class MainServlet extends HttpServlet {
                 }
 
                 req.setAttribute("message", e.getMessage());
-                req.getRequestDispatcher("jspproject/error.jsp").forward(req, resp);
+                redirectToPage(Pages.ERROR, req, resp);
             }
         }
     }

@@ -9,12 +9,13 @@ public class MyBean {
 
     private Service service;
 
+
     public void setService(Service service) {
         this.service = service;
     }
 
     public MyBean(String text) {
-        this.text = text;
+    this.text = text;
     }
 
     public String getText() {

@@ -6,12 +6,16 @@
     <body>
     <form action="mock" method="post">
         <table>
+            <tr align="left">
+                <td>Use for connect to DB server with hardcoded parameters</td>
+            </tr>
+            <tr></tr>
             <tr>
-                <td></td>
-                <td><input type="submit" name="connect"></td>
+                <td><input type="submit" name="connect" value="Connect!"></td>
             </tr>
     </table>
     </form>
+    <br>
     <%@include file="footer_menu.jsp"%>
     <%@include file="footer.jsp"%>
 </body>

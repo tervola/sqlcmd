@@ -1,5 +1,7 @@
 package ua.com.juja.tervola.sqlcmd.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
 import ua.com.juja.tervola.sqlcmd.core.ConnectionManager;
 import ua.com.juja.tervola.sqlcmd.core.DbController;
@@ -12,10 +14,12 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
-
+@Component
 public class ServiceImpl implements Service {
     private ConnectionManager connectionManager;
+    @Autowired
     private ConfigReader configReader;
+//    @Autowired
     private DbController dbController;
     private Connection connection;
     private boolean isConnected = false;
@@ -40,13 +44,9 @@ public class ServiceImpl implements Service {
         this.isLoggingEnabled = isLoggingEnabled;
     }
 
-    public ServiceImpl() throws IOException, SQLException {
-        configReader = new ConfigReader();
-    }
-
     @Override
     public List<String> commandsList() {
-        return Arrays.asList("help", "list", "select", "select_mock", "execute");
+        return Arrays.asList("help", "list", "select", "select_mock", "execute","execute_mock","disconnect");
     }
 
     @Override
@@ -78,6 +78,11 @@ public class ServiceImpl implements Service {
     }
 
     @Override
+    public void closeConnection() throws SQLException {
+        connection.close();
+    }
+
+    @Override
     public void setConnectedStatus(boolean bool) {
         this.isConnected = bool;
     }
@@ -105,7 +110,6 @@ public class ServiceImpl implements Service {
     @Override
     public List<String[]> select(String command) throws SQLException {
         List<String[]> rval = dbController.select(command);
-        addLog(command);
         return rval;
 
     }
@@ -113,10 +117,6 @@ public class ServiceImpl implements Service {
     @Override
     public void executeCommand(String command) throws SQLException {
         dbController.executeCommand(command);
-        addLog(command);
     }
 
-    private void addLog(String command) throws SQLException {
-        dbController.executeCommand(String.format("INSERT INTO logs(\"timestamp\", \"Details\")VALUES (CURRENT_TIMESTAMP, \'%s\')",command));
-    }
 }

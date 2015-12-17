@@ -1,10 +1,13 @@
 ua\com\juja\tervola\sqlcmd\core\DbControllerImpl.class
+ua\com\juja\tervola\sqlcmd\web\Pages.class
 ua\com\juja\tervola\sqlcmd\service\ServiceImpl.class
 ua\com\juja\tervola\sqlcmd\console\Informer.class
 ua\com\juja\tervola\sqlcmd\console\InformerImpl.class
 ua\com\juja\tervola\sqlcmd\core\ConnectionManager.class
 ua\com\juja\tervola\sqlcmd\core\DbController.class
+ua\com\juja\tervola\sqlcmd\web\MainController.class
 ua\com\juja\tervola\sqlcmd\core\Controller.class
+ua\com\juja\tervola\sqlcmd\service\MessageText.class
 ua\com\juja\tervola\sqlcmd\web\MainServlet.class
 ua\com\juja\tervola\sqlcmd\core\ConfigReader.class
 ua\com\juja\tervola\sqlcmd\service\Service.class
