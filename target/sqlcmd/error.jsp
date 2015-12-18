@@ -7,6 +7,6 @@
 <body>
 Ohhh!<br>Can't load this page.<br>
 ${message}<br>
-Go to <a href="help">help</a> <br> or  <a href="menu">Menu</a>
+Go to <a href="help">help</a> <br> or <a href="menu">Menu</a>
 </body>
 </html>

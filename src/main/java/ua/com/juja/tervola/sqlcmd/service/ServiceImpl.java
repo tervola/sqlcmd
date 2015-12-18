@@ -7,7 +7,6 @@ import ua.com.juja.tervola.sqlcmd.core.ConnectionManager;
 import ua.com.juja.tervola.sqlcmd.core.DbController;
 import ua.com.juja.tervola.sqlcmd.core.DbControllerImpl;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,7 +18,6 @@ public class ServiceImpl implements Service {
     private ConnectionManager connectionManager;
     @Autowired
     private ConfigReader configReader;
-//    @Autowired
     private DbController dbController;
     private Connection connection;
     private boolean isConnected = false;
@@ -27,7 +25,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public void enablingLog(boolean cleanFlag) throws SQLException {
-        if (dbController.isExistLogTable() && cleanFlag){
+        if (dbController.isExistLogTable() && cleanFlag) {
             dbController.executeCommand("TRUNCATE logs");
         } else {
             dbController.executeCommand("CREATE TABLE logs (id SERIAL, timestamp timestamp, Description text");
@@ -35,7 +33,7 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public boolean isLoggingEnabled(){
+    public boolean isLoggingEnabled() {
         return isLoggingEnabled;
     }
 
@@ -46,12 +44,12 @@ public class ServiceImpl implements Service {
 
     @Override
     public List<String> commandsList() {
-        return Arrays.asList("help", "list", "select", "select_mock", "execute","execute_mock","disconnect");
+        return Arrays.asList("help", "list", "select", "select_mock", "execute", "execute_mock", "disconnect");
     }
 
     @Override
     public List<String> connectionCommandsList() {
-        return Arrays.asList("help","connect", "mock");
+        return Arrays.asList("help", "connect", "mock");
     }
 
     @Override

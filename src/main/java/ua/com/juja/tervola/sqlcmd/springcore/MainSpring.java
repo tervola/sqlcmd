@@ -1,4 +1,4 @@
-package ua.com.juja.tervola.sqlcmd.spring;
+package ua.com.juja.tervola.sqlcmd.springcore;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

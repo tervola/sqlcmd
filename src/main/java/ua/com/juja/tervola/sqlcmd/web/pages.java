@@ -16,8 +16,7 @@ public enum Pages {
     EXECUTE_MOCK("view/execute_mock.jsp"),
     EXECUTE_RESULT("view/execute_result.jsp"),
     SELECT_RESULTS("view/select_result.jsp"),
-    LIST("view/list.jsp")
-    ;
+    LIST("view/list.jsp");
 
     private final String page;
 
@@ -26,7 +25,7 @@ public enum Pages {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return page;
     }
 

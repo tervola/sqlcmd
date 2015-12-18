@@ -1,4 +1,4 @@
-package ua.com.juja.tervola.sqlcmd.spring;
+package ua.com.juja.tervola.sqlcmd.springcore;
 
 /**
  * Created by user on 11/20/2015.
@@ -15,7 +15,7 @@ public class MyBean {
     }
 
     public MyBean(String text) {
-    this.text = text;
+        this.text = text;
     }
 
     public String getText() {

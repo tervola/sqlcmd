@@ -2,21 +2,13 @@ package ua.com.juja.tervola.sqlcmd.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ua.com.juja.tervola.sqlcmd.core.DbController;
 import ua.com.juja.tervola.sqlcmd.service.MessageText;
 import ua.com.juja.tervola.sqlcmd.service.Service;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.Serializable;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 /**
  * Created by user on 12/17/2015.
@@ -71,7 +63,7 @@ public class MainController {
         request.setAttribute("dbname", service.getConfigReader().getDatabaseName());
         request.setAttribute("username", service.getConfigReader().getUserName());
 
-        if(service.isConnected()) {
+        if (service.isConnected()) {
             request.setAttribute("items", service.commandsList());
         } else {
             request.setAttribute("items", service.connectionCommandsList());
@@ -163,8 +155,7 @@ public class MainController {
         sqlCommand = request.getParameter("command");
         try {
             return "redirect:/execute_result";
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             request.setAttribute("message", e.getMessage());
             return "error";
         }

@@ -7,7 +7,7 @@
 <body>
 Ohhh!<br>Can't load this page.<br>
 ${message}<br>
-<%@include file="footer_menu.jsp"%>
-<%@include file="footer.jsp"%>
+<%@include file="footer_menu.jsp" %>
+<%@include file="footer.jsp" %>
 </body>
 </html>

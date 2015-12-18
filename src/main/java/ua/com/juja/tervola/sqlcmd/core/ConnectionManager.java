@@ -26,7 +26,11 @@ public class ConnectionManager {
     }
 
     public Connection connect() throws SQLException {
-        connection = DriverManager.getConnection(connectionString, userName, password);
+
+        if (connection == null){
+            connection = DriverManager.getConnection(connectionString, userName, password);
+        }
+
         return connection;
     }
 

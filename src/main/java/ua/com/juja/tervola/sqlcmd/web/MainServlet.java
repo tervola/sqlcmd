@@ -28,7 +28,7 @@ public class MainServlet extends HttpServlet {
     @Override
     public void init(final ServletConfig config) throws ServletException {
         super.init(config);
-        SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this,config.getServletContext());
+        SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this, config.getServletContext());
     }
 
     @Override
@@ -37,10 +37,10 @@ public class MainServlet extends HttpServlet {
         String action = getAction(req);
         if (service.isConnected()) {
             req.setAttribute("items", service.commandsList());
-            if (service.isLoggingEnabled()){
+            if (service.isLoggingEnabled()) {
                 req.setAttribute("logs", messageText.getTextLogsEnablind());
             } else {
-                req.setAttribute("logs",  messageText.getTextLogsClean());
+                req.setAttribute("logs", messageText.getTextLogsClean());
             }
         } else {
             req.setAttribute("message", messageText.getTextMockConnections());
@@ -55,13 +55,11 @@ public class MainServlet extends HttpServlet {
 
             redirectToPage(Pages.MENU, req, resp);
 
-        }
-        else if (action.equals("/execute_mock")) {
+        } else if (action.equals("/execute_mock")) {
 
             redirectToPage(Pages.EXECUTE_MOCK, req, resp);
 
-        }
-        else if (action.equals("/help")) {
+        } else if (action.equals("/help")) {
 
             redirectToPage(Pages.HELP, req, resp);
 
@@ -69,7 +67,7 @@ public class MainServlet extends HttpServlet {
 
             redirectToPage(Pages.CONNECT, req, resp);
 
-        }else if (action.equals("/log_clean")) {
+        } else if (action.equals("/log_clean")) {
 
             redirectToPage(Pages.CLEAN_LOGS, req, resp);
 
@@ -137,11 +135,10 @@ public class MainServlet extends HttpServlet {
             redirectToPage(Pages.LIST, req, resp);
 
         } else {
-            if(service.isConnected()) {
+            if (service.isConnected()) {
                 redirectToPage(Pages.ERROR, req, resp);
-            } else
-            {
-                redirectToPage(Pages.MENU,req,resp);
+            } else {
+                redirectToPage(Pages.MENU, req, resp);
             }
         }
 
@@ -182,14 +179,12 @@ public class MainServlet extends HttpServlet {
                 redirectToPage(Pages.ERROR, req, resp);
             }
 
-        }
-        else if (action.equals("/execute_mock")) {
+        } else if (action.equals("/execute_mock")) {
 
             sqlCommand = messageText.getCommandExecuteMock();
             resp.sendRedirect(resp.encodeRedirectURL("execute_result"));
 
-        }
-        else if (action.equals("/select")) {
+        } else if (action.equals("/select")) {
 
             sqlCommand = req.getParameter("command");
             resp.sendRedirect(resp.encodeRedirectURL("select_result"));
@@ -199,9 +194,8 @@ public class MainServlet extends HttpServlet {
             sqlCommand = req.getParameter("command");
             try {
                 resp.sendRedirect(resp.encodeRedirectURL("execute_result"));
-            } catch (Exception e)
-            {
-                redirectToErrorPage(req,resp,e);
+            } catch (Exception e) {
+                redirectToErrorPage(req, resp, e);
             }
 
         } else if (action.equals("/select_mock")) {
@@ -214,7 +208,7 @@ public class MainServlet extends HttpServlet {
             try {
                 service.enablingLog(true);
             } catch (SQLException e) {
-                redirectToErrorPage(req, resp,e);
+                redirectToErrorPage(req, resp, e);
             }
 
             resp.sendRedirect(resp.encodeRedirectURL("menu"));

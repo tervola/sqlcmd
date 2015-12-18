@@ -20,7 +20,7 @@ public class DbControllerImpl implements DbController {
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
         while (rs.next()) {
-            if (rs.getString(3).equals("logs")){
+            if (rs.getString(3).equals("logs")) {
                 isExistLogTable = true;
             }
         }
@@ -33,7 +33,7 @@ public class DbControllerImpl implements DbController {
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
         while (rs.next()) {
-            if (rs.getString(3).equals("logs")){
+            if (rs.getString(3).equals("logs")) {
                 isExistLogTable = true;
             }
             rval.add(rs.getString(3));

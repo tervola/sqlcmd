@@ -3,7 +3,7 @@
 <table>
     <tr>
         <td>
-            <p>You can go to  <a href="help">help</a> or <a href="menu">Menu</a>
+            <p>You can go to <a href="help">help</a> or <a href="menu">Menu</a>
         </td>
     </tr>
 
