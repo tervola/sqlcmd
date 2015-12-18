@@ -9,6 +9,7 @@ import ua.com.juja.tervola.sqlcmd.core.DbController;
 import ua.com.juja.tervola.sqlcmd.service.MessageText;
 import ua.com.juja.tervola.sqlcmd.service.Service;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,6 +29,9 @@ public class MainController {
 
     @Autowired
     MessageText messageText;
+
+    private String sqlCommand;
+
 
     @RequestMapping(value = "/connect", method = RequestMethod.GET)
     public String connect() {
@@ -63,12 +67,23 @@ public class MainController {
 
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
     public String menu(HttpServletRequest request) {
+        request.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
+        request.setAttribute("dbname", service.getConfigReader().getDatabaseName());
+        request.setAttribute("username", service.getConfigReader().getUserName());
+
         if(service.isConnected()) {
             request.setAttribute("items", service.commandsList());
         } else {
             request.setAttribute("items", service.connectionCommandsList());
         }
         return "menu";
+    }
+
+    @RequestMapping(value = "/disconnect", method = RequestMethod.GET)
+    public String disconnect() throws SQLException {
+        service.closeConnection();
+        service.setConnectedStatus(false);
+        return "redirect:/menu";
     }
 
     @RequestMapping(value = "/mock", method = RequestMethod.GET)
@@ -94,11 +109,91 @@ public class MainController {
         }
     }
 
-
-
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(HttpServletRequest request) throws SQLException {
         request.setAttribute("tablelist", service.tableList());
         return "list";
+    }
+
+    @RequestMapping(value = "/select", method = RequestMethod.GET)
+    public String select() {
+        return "select";
+    }
+
+    @RequestMapping(value = "/select", method = RequestMethod.POST)
+    public String selecting(HttpServletRequest request) {
+
+        sqlCommand = request.getParameter("command");
+        return "redirect:/select_result";
+    }
+
+    @RequestMapping(value = "/select_result", method = RequestMethod.GET)
+    public String selectingResult(HttpServletRequest request) {
+
+        try {
+            request.setAttribute("select", service.select(sqlCommand));
+        } catch (SQLException e) {
+            request.setAttribute("message", e.getMessage());
+            return "error";
+        }
+        return "select_result";
+    }
+
+    @RequestMapping(value = "/select_mock", method = RequestMethod.GET)
+    public String selectMock() {
+        return "select_mock";
+    }
+
+    @RequestMapping(value = "/select_mock", method = RequestMethod.POST)
+    public String selectingMock() {
+        sqlCommand = messageText.getCommandSelectMock();
+        return "redirect:/select_result";
+    }
+
+    @RequestMapping(value = "/execute", method = RequestMethod.GET)
+    public String execute(HttpServletRequest request) {
+        sqlCommand = request.getParameter("command");
+        return "execute";
+
+    }
+
+    @RequestMapping(value = "/execute", method = RequestMethod.POST)
+    public String executing(HttpServletRequest request) {
+
+        sqlCommand = request.getParameter("command");
+        try {
+            return "redirect:/execute_result";
+        } catch (Exception e)
+        {
+            request.setAttribute("message", e.getMessage());
+            return "error";
+        }
+    }
+
+    @RequestMapping(value = "/execute_result", method = RequestMethod.GET)
+    public String executeResult(HttpServletRequest request) {
+
+        try {
+            service.executeCommand(sqlCommand);
+            request.setAttribute("execute", sqlCommand);
+            request.setAttribute("result", "successfully");
+        } catch (SQLException e) {
+            request.setAttribute("result", "FAIL");
+            request.setAttribute("error", e.getMessage());
+        }
+        return "execute_result";
+    }
+
+    @RequestMapping(value = "/execute_mock", method = RequestMethod.GET)
+    public String executeMock() {
+        return "execute_mock";
+    }
+
+    @RequestMapping(value = "/execute_mock", method = RequestMethod.POST)
+    public String executingMock(HttpServletRequest request) {
+
+        sqlCommand = messageText.getCommandExecuteMock();
+
+        return "redirect:/execute_result";
     }
 }

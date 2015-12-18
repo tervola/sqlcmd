@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbbca376-70b0-4460-b12d-b9e1fdd9fdd2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/web/MainController.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/web/MainController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-12-17" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-12-17" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/view/select_mock.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/view/select_mock.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sqlcmd.iws" />
@@ -33,8 +30,8 @@
       <file leaf-file-name="MainServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.310345">
-              <caret line="182" column="13" selection-start-line="171" selection-start-column="12" selection-end-line="182" selection-end-column="13" />
+            <state vertical-scroll-proportion="-8.275862">
+              <caret line="188" column="72" selection-start-line="187" selection-start-column="12" selection-end-line="188" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -43,20 +40,37 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.09375">
-              <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+            <state vertical-scroll-proportion="1.2842262">
+              <caret line="196" column="42" selection-start-line="196" selection-start-column="42" selection-end-line="196" selection-end-column="42" />
               <folding>
-                <element signature="e#995#996#0" expanded="true" />
-                <element signature="e#1027#1028#0" expanded="true" />
-                <element signature="e#1713#1714#0" expanded="true" />
-                <element signature="e#1752#1753#0" expanded="true" />
-                <element signature="e#1846#1847#0" expanded="true" />
-                <element signature="e#1875#1876#0" expanded="true" />
-                <element signature="e#2323#2324#0" expanded="true" />
-                <element signature="e#2352#2353#0" expanded="true" />
-                <element signature="e#2447#2448#0" expanded="true" />
-                <element signature="e#2477#2478#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#1099#1100#0" expanded="true" />
+                <element signature="e#1785#1786#0" expanded="true" />
+                <element signature="e#1824#1825#0" expanded="true" />
+                <element signature="e#1918#1919#0" expanded="true" />
+                <element signature="e#1947#1948#0" expanded="true" />
+                <element signature="e#2903#2904#0" expanded="true" />
+                <element signature="e#2932#2933#0" expanded="true" />
+                <element signature="e#3027#3028#0" expanded="true" />
+                <element signature="e#3057#3058#0" expanded="true" />
+                <element signature="e#3886#3887#0" expanded="true" />
+                <element signature="e#3917#3918#0" expanded="true" />
+                <element signature="e#4651#4652#0" expanded="true" />
+                <element signature="e#4687#4688#0" expanded="true" />
+                <element signature="e#6124#6125#0" expanded="true" />
+                <element signature="e#6161#6162#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="select_mock.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/select_mock.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/ConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/main/resources/prop/config.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/help.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/spring/Service.java" />
@@ -144,6 +157,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/help_mock.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/select_mock.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java" />
       </list>
     </option>
@@ -999,7 +1013,7 @@
       <workItem from="1447432605889" duration="11298000" />
       <workItem from="1447767271039" duration="60239000" />
       <workItem from="1448978117699" duration="36249000" />
-      <workItem from="1450344656358" duration="10968000" />
+      <workItem from="1450344656358" duration="16813000" />
     </task>
     <task id="LOCAL-00001" summary="move resources, fix read from resources file">
       <created>1447411772565</created>
@@ -1013,11 +1027,17 @@
       <option name="project" value="LOCAL" />
       <updated>1450350656052</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added error, connections">
+      <created>1450360684486</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1450360684486</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159381000" />
+    <option name="totallyTimeSpent" value="165226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1095,7 +1115,8 @@
     <MESSAGE value="move resources, fix read from resources file" />
     <MESSAGE value="last changes/ console/ embedded works" />
     <MESSAGE value="Added menu to controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added menu to controller" />
+    <MESSAGE value="Added error, connections" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added error, connections" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1269,14 +1290,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5627178">
           <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/select_mock.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3457627">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1468,22 +1481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.310345">
-          <caret line="182" column="13" selection-start-line="171" selection-start-column="12" selection-end-line="182" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/prop/config.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05151515">
@@ -1492,21 +1489,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.275862">
+          <caret line="188" column="72" selection-start-line="187" selection-start-column="12" selection-end-line="188" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/select_mock.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.09375">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+        <state vertical-scroll-proportion="1.2842262">
+          <caret line="196" column="42" selection-start-line="196" selection-start-column="42" selection-end-line="196" selection-end-column="42" />
           <folding>
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-            <element signature="e#1752#1753#0" expanded="true" />
-            <element signature="e#1846#1847#0" expanded="true" />
-            <element signature="e#1875#1876#0" expanded="true" />
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2352#2353#0" expanded="true" />
-            <element signature="e#2447#2448#0" expanded="true" />
-            <element signature="e#2477#2478#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1785#1786#0" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1918#1919#0" expanded="true" />
+            <element signature="e#1947#1948#0" expanded="true" />
+            <element signature="e#2903#2904#0" expanded="true" />
+            <element signature="e#2932#2933#0" expanded="true" />
+            <element signature="e#3027#3028#0" expanded="true" />
+            <element signature="e#3057#3058#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3917#3918#0" expanded="true" />
+            <element signature="e#4651#4652#0" expanded="true" />
+            <element signature="e#4687#4688#0" expanded="true" />
+            <element signature="e#6124#6125#0" expanded="true" />
+            <element signature="e#6161#6162#0" expanded="true" />
           </folding>
         </state>
       </provider>

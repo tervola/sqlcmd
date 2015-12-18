@@ -11,6 +11,10 @@
                 <td>"SELECT * FROM id"</td>
                 <td><input type="submit" name="command_mock" value="Execute"></td>
             </tr>
+            <tr>
+                <td><i>* Will be working only if <b>id</b> table exist!</i></td>
+                <td></td>
+            </tr>
         </table>
     </form>
     <%@include file="footer_menu.jsp"%>
