@@ -2,6 +2,7 @@ package ua.com.juja.tervola.sqlcmd.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+import ua.com.juja.tervola.sqlcmd.service.Menu;
 import ua.com.juja.tervola.sqlcmd.service.MessageText;
 import ua.com.juja.tervola.sqlcmd.service.Service;
 
@@ -23,6 +24,8 @@ public class MainServlet extends HttpServlet {
     Service service;
     @Autowired
     MessageText messageText;
+    @Autowired
+    Menu menu;
     String sqlCommand;
 
     @Override
@@ -36,7 +39,7 @@ public class MainServlet extends HttpServlet {
 
         String action = getAction(req);
         if (service.isConnected()) {
-            req.setAttribute("items", service.commandsList());
+            req.setAttribute("items", menu.commandsList());
             if (service.isLoggingEnabled()) {
                 req.setAttribute("logs", messageText.getTextLogsEnablind());
             } else {
@@ -44,7 +47,7 @@ public class MainServlet extends HttpServlet {
             }
         } else {
             req.setAttribute("message", messageText.getTextMockConnections());
-            req.setAttribute("items", service.connectionCommandsList());
+            req.setAttribute("items", menu.connectionCommandsList());
         }
 
         if (action.equals("/menu")) {
@@ -85,7 +88,7 @@ public class MainServlet extends HttpServlet {
 
                 service.closeConnection();
                 service.setConnectedStatus(false);
-                req.setAttribute("items", service.connectionCommandsList());
+                req.setAttribute("items", menu.connectionCommandsList());
                 redirectToPage(Pages.MENU, req, resp);
 
             } catch (SQLException e) {

@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ua.com.juja.tervola.sqlcmd.service.Menu;
 import ua.com.juja.tervola.sqlcmd.service.MessageText;
 import ua.com.juja.tervola.sqlcmd.service.Service;
 
@@ -17,6 +18,9 @@ import java.sql.SQLException;
  */
 @Controller
 public class MainController {
+
+    @Autowired
+    private Menu menu;
 
     @Autowired
     private Service service;
@@ -65,9 +69,9 @@ public class MainController {
         model.addAttribute("username", service.getConfigReader().getUserName());
 
         if (service.isConnected()) {
-            model.addAttribute("items", service.commandsList());
+            model.addAttribute("items", menu.commandsList());
         } else {
-            model.addAttribute("items", service.connectionCommandsList());
+            model.addAttribute("items", menu.connectionCommandsList());
         }
         return "menu";
     }

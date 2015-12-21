@@ -10,7 +10,6 @@ import java.util.List;
  */
 public interface Service {
 
-    List<String> commandsList();
 
     void connect(String dbName, String userName, String password) throws SQLException;
 
@@ -29,8 +28,6 @@ public interface Service {
     List<String[]> select(String command) throws SQLException;
 
     void executeCommand(String command) throws SQLException;
-
-    List<String> connectionCommandsList();
 
     void enablingLog(boolean cleanFlag) throws SQLException;
 

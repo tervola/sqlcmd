@@ -43,16 +43,6 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public List<String> commandsList() {
-        return Arrays.asList("help", "list", "select", "select_mock", "execute", "execute_mock", "disconnect");
-    }
-
-    @Override
-    public List<String> connectionCommandsList() {
-        return Arrays.asList("help", "connect", "mock");
-    }
-
-    @Override
     public void connect(String dbName, String userName, String password) throws SQLException {
         connectionManager = new ConnectionManager(configReader.getConnectionStringWithouDB(), dbName, userName, password);
         connection = connectionManager.connect();
