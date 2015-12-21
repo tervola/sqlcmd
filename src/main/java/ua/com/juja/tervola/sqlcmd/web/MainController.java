@@ -2,6 +2,8 @@ package ua.com.juja.tervola.sqlcmd.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.com.juja.tervola.sqlcmd.service.MessageText;
@@ -26,22 +28,21 @@ public class MainController {
 
 
     @RequestMapping(value = "/connect", method = RequestMethod.GET)
-    public String connect() {
+    public String connect(Model model) {
+
+        model.addAttribute("connection", new Connection());
         return "connect";
     }
 
     @RequestMapping(value = "/connect", method = RequestMethod.POST)
-    public String connecting(HttpServletRequest request) {
-        String dbName = request.getParameter("dbname");
-        String userName = request.getParameter("username");
-        String password = request.getParameter("password");
+    public String connecting(@ModelAttribute("connection") Connection connection, Model model)  {
 
         try {
-            service.connect(dbName, userName, password);
+            service.connect(connection.getDatabase(), connection.getUserName(), connection.getPassword());
             service.setConnectedStatus(true);
             return "redirect:/menu";
         } catch (Exception e) {
-            request.setAttribute("message", e.getMessage());
+            model.addAttribute("message", e.getMessage());
             return "error";
         }
     }
@@ -58,15 +59,15 @@ public class MainController {
     }
 
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
-    public String menu(HttpServletRequest request) {
-        request.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
-        request.setAttribute("dbname", service.getConfigReader().getDatabaseName());
-        request.setAttribute("username", service.getConfigReader().getUserName());
+    public String menu(Model model) {
+        model.addAttribute("status", service.isConnected() ? "connected!" : "not connected!");
+        model.addAttribute("dbname", service.getConfigReader().getDatabaseName());
+        model.addAttribute("username", service.getConfigReader().getUserName());
 
         if (service.isConnected()) {
-            request.setAttribute("items", service.commandsList());
+            model.addAttribute("items", service.commandsList());
         } else {
-            request.setAttribute("items", service.connectionCommandsList());
+            model.addAttribute("items", service.connectionCommandsList());
         }
         return "menu";
     }
@@ -89,21 +90,21 @@ public class MainController {
     }
 
     @RequestMapping(value = "/mock", method = RequestMethod.POST)
-    public String mockConnecting(HttpServletRequest request) {
+    public String mockConnecting(Model model) {
         try {
             service.connect2();
             service.setConnectedStatus(true);
-            request.setAttribute("status", service.isConnected() ? "connected!" : "not connected!");
+            model.addAttribute("status", service.isConnected() ? "connected!" : "not connected!");
             return "redirect:/menu";
         } catch (SQLException e) {
-            request.setAttribute("message", e.getMessage());
+            model.addAttribute("message", e.getMessage());
             return "error";
         }
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(HttpServletRequest request) throws SQLException {
-        request.setAttribute("tablelist", service.tableList());
+    public String list(Model model) throws SQLException {
+        model.addAttribute("tablelist", service.tableList());
         return "list";
     }
 
@@ -120,12 +121,12 @@ public class MainController {
     }
 
     @RequestMapping(value = "/select_result", method = RequestMethod.GET)
-    public String selectingResult(HttpServletRequest request) {
+    public String selectingResult(Model model) {
 
         try {
-            request.setAttribute("select", service.select(sqlCommand));
+            model.addAttribute("select", service.select(sqlCommand));
         } catch (SQLException e) {
-            request.setAttribute("message", e.getMessage());
+            model.addAttribute("message", e.getMessage());
             return "error";
         }
         return "select_result";
@@ -162,15 +163,15 @@ public class MainController {
     }
 
     @RequestMapping(value = "/execute_result", method = RequestMethod.GET)
-    public String executeResult(HttpServletRequest request) {
+    public String executeResult(Model model) {
 
         try {
             service.executeCommand(sqlCommand);
-            request.setAttribute("execute", sqlCommand);
-            request.setAttribute("result", "successfully");
+            model.addAttribute("execute", sqlCommand);
+            model.addAttribute("result", "successfully");
         } catch (SQLException e) {
-            request.setAttribute("result", "FAIL");
-            request.setAttribute("error", e.getMessage());
+            model.addAttribute("result", "FAIL");
+            model.addAttribute("error", e.getMessage());
         }
         return "execute_result";
     }
@@ -181,7 +182,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/execute_mock", method = RequestMethod.POST)
-    public String executingMock(HttpServletRequest request) {
+    public String executingMock() {
 
         sqlCommand = messageText.getCommandExecuteMock();
 

@@ -1,31 +1,33 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>SQLCmd</title>
 </head>
 <body>
-<form action="connect" method="post">
+<form:form method="POST" action="connect" modelAttribute="connection">
+
     <table>
         <tr>
             <td>Database name</td>
-            <td><input type="text" name="dbname"></td>
+            <td><form:input path="database" id="database"/></td>
         </tr>
         <tr>
             <td>User name</td>
-            <td><input type="text" name="username"></td>
+            <td><form:input path="userName" id="username"/></td>
         </tr>
         <tr>
             <td>Password</td>
-            <td><input type="password" name="password"></td>
+            <td><form:input path="password" id="password"/></td>
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" name="connect"></td>
+            <td><input type="submit" value="connect" id="connect"></td>
         </tr>
     </table>
+</form:form>
 
     <%@include file="footer_menu.jsp" %>
     <%@include file="footer.jsp" %>
-</form>
 </body>
 </html>
