@@ -74,7 +74,7 @@ public class MainServlet extends HttpServlet {
 
             redirectToPage(Pages.CLEAN_LOGS, req, resp);
 
-        } else if (action.equals("/mock")) {
+        } else if (action.equals("/connect_mock")) {
 
             redirectToPage(Pages.MOCK, req, resp);
 
@@ -216,7 +216,7 @@ public class MainServlet extends HttpServlet {
 
             resp.sendRedirect(resp.encodeRedirectURL("menu"));
 
-        } else if (action.equals("/mock")) {
+        } else if (action.equals("/connect_mock")) {
 
             try {
                 service.connect2();

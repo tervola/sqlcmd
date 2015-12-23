@@ -29,6 +29,7 @@ public interface Service {
 
     void executeCommand(String command) throws SQLException;
 
+
     void enablingLog(boolean cleanFlag) throws SQLException;
 
     boolean isLoggingEnabled();

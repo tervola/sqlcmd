@@ -18,6 +18,8 @@ public class ServiceImpl implements Service {
     private ConnectionManager connectionManager;
     @Autowired
     private ConfigReader configReader;
+    @Autowired
+    private Menu menu;
     private DbController dbController;
     private Connection connection;
     private boolean isConnected = false;
@@ -41,6 +43,8 @@ public class ServiceImpl implements Service {
     public void setIsLoggingEnabled(boolean isLoggingEnabled) {
         this.isLoggingEnabled = isLoggingEnabled;
     }
+
+
 
     @Override
     public void connect(String dbName, String userName, String password) throws SQLException {

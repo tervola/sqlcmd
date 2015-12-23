@@ -16,6 +16,6 @@ public class Menu {
     }
 
     public List<String> connectionCommandsList() {
-        return Arrays.asList("help", "connect", "mock");
+        return Arrays.asList("help", "connect", "connect_mock");
     }
 }

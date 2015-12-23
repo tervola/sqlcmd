@@ -83,9 +83,9 @@ public class MainController {
         return "redirect:/menu";
     }
 
-    @RequestMapping(value = "/mock", method = RequestMethod.GET)
+    @RequestMapping(value = "/connect_mock", method = RequestMethod.GET)
     public String mock() {
-        return "mock";
+        return "connect_mock";
     }
 
     @RequestMapping(value = "/error", method = RequestMethod.GET)
@@ -93,7 +93,7 @@ public class MainController {
         return "error";
     }
 
-    @RequestMapping(value = "/mock", method = RequestMethod.POST)
+    @RequestMapping(value = "/connect_mock", method = RequestMethod.POST)
     public String mockConnecting(Model model) {
         try {
             service.connect2();

@@ -1,7 +1,14 @@
 package ua.com.juja.tervola.sqlcmd.core;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by user on 8/28/2015.
@@ -9,10 +16,12 @@ import java.util.ArrayList;
 public class DbControllerImpl implements DbController {
 
     Connection connection;
+    JdbcTemplate jdbcTemplate;
     boolean isExistLogTable = false;
 
     public DbControllerImpl(Connection connection) {
         this.connection = connection;
+        jdbcTemplate = new JdbcTemplate(new SingleConnectionDataSource(connection, false));
     }
 
     @Override
@@ -28,17 +37,18 @@ public class DbControllerImpl implements DbController {
     }
 
     @Override
-    public ArrayList<String> tableList() throws SQLException {
-        ArrayList<String> rval = new ArrayList<String>();
-        DatabaseMetaData md = connection.getMetaData();
-        ResultSet rs = md.getTables(null, "public", null, null);
-        while (rs.next()) {
-            if (rs.getString(3).equals("logs")) {
-                isExistLogTable = true;
-            }
-            rval.add(rs.getString(3));
-        }
-        return rval;
+    public List<String> tableList() throws SQLException {
+        return jdbcTemplate.query("SELECT table_name FROM information_schema.tables WHERE table_schema=\'public\'",
+                new RowMapper<String>() {
+                    @Override
+                    public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        String rval = "";
+                        for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+                            rval =  rs.getString(i + 1);
+                        }
+                        return rval;
+                    }
+                });
     }
 
     @Override

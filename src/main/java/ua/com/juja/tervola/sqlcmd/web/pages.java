@@ -9,7 +9,7 @@ public enum Pages {
     HELP("view/help.jsp"),
     CONNECT("view/connect.jsp"),
     CLEAN_LOGS("view/log_clean.jsp"),
-    MOCK("view/mock.jsp"),
+    MOCK("view/connect_mock.jsp"),
     SELECT("view/select.jsp"),
     SELECT_MOCK("view/select_mock.jsp"),
     EXECUTE("view/execute.jsp"),
