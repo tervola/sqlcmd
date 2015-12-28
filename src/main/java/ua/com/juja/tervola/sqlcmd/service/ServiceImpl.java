@@ -10,7 +10,7 @@ import ua.com.juja.tervola.sqlcmd.core.DbControllerImpl;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -27,7 +27,7 @@ public class ServiceImpl implements Service {
 
     @Override
     public void enablingLog(boolean cleanFlag) throws SQLException {
-        if (dbController.isExistLogTable() && cleanFlag) {
+        if (dbController.checkTable("logs") && cleanFlag) {
             dbController.executeCommand("TRUNCATE logs");
         } else {
             dbController.executeCommand("CREATE TABLE logs (id SERIAL, timestamp timestamp, Description text");
@@ -100,8 +100,8 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public List<String[]> select(String command) throws SQLException {
-        List<String[]> rval = dbController.select(command);
+    public ArrayList<String[]> select(String command) throws SQLException {
+        ArrayList<String[]> rval = dbController.select(command);
         return rval;
 
     }

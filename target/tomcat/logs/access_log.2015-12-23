@@ -61,3 +61,8 @@
 0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:24:27 +0200] "GET /sqlcmd/connect_mock HTTP/1.1" 200 742 http-bio-9090-exec-8 2
 0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:24:28 +0200] "POST /sqlcmd/connect_mock HTTP/1.1" 302 - http-bio-9090-exec-8 15
 0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:24:28 +0200] "GET /sqlcmd/menu?status=connected%21 HTTP/1.1" 200 908 http-bio-9090-exec-7 2
+0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:37:39 +0200] "GET /sqlcmd/menu?status=connected%21 HTTP/1.1" 200 738 http-bio-9090-exec-1 797
+0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:37:40 +0200] "GET /sqlcmd/connect_mock HTTP/1.1" 200 742 http-bio-9090-exec-2 5
+0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:37:40 +0200] "POST /sqlcmd/connect_mock HTTP/1.1" 302 - http-bio-9090-exec-3 69
+0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:37:40 +0200] "GET /sqlcmd/menu?status=connected%21 HTTP/1.1" 200 908 http-bio-9090-exec-4 2
+0:0:0:0:0:0:0:1 - - [23/Dec/2015:17:37:41 +0200] "GET /sqlcmd/list HTTP/1.1" 200 935 http-bio-9090-exec-5 48

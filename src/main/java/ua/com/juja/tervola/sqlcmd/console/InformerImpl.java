@@ -3,11 +3,13 @@ package ua.com.juja.tervola.sqlcmd.console;
 import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
 import ua.com.juja.tervola.sqlcmd.core.ConnectionManager;
 import ua.com.juja.tervola.sqlcmd.core.DbControllerImpl;
+import ua.com.juja.tervola.sqlcmd.core.Table;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by user on 9/15/2015.
@@ -115,6 +117,31 @@ public class InformerImpl implements Informer {
             for (String s : dbController.tableList()) {
                 print(String.valueOf(index++) + "." + s);
             }
+            rval = 1;
+        } else if (string.equals("selectall")) {
+            string = "select * from employee";
+            print(String.format("\nResult: \"%s\"", string));
+
+            List<List<String>> list =  dbController.selectAll(string);
+            for (List<String> s : dbController.selectAll(string)){
+                System.out.println(s);
+            }
+            System.out.println("total records:" + list.size());
+
+            rval = 1;
+        } else if (string.equals("selecttable")) {
+            string = "select * from employee";
+            print(String.format("\nResult: \"%s\"", string));
+
+            ArrayList<Table> tablelist  = (ArrayList<Table>) dbController.selectTable(string);
+
+            System.out.println(tablelist.get(0).getTitle());
+            for (Table s : tablelist){
+
+                System.out.println(s.getBody().toString());
+            }
+
+
             rval = 1;
         } else if (string.startsWith("select")) {
             print(String.format("\nResult: \"%s\"", string));

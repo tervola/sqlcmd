@@ -1,14 +1,13 @@
 package ua.com.juja.tervola.sqlcmd.core;
 
+import javafx.scene.control.Tab;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by user on 8/28/2015.
@@ -24,12 +23,19 @@ public class DbControllerImpl implements DbController {
         jdbcTemplate = new JdbcTemplate(new SingleConnectionDataSource(connection, false));
     }
 
+    //TODO: add tests, change logic for trancate/
     @Override
-    public boolean isExistLogTable() throws SQLException {
+    public void truncateTable(String tableName) throws SQLException {
+        String sqlCommand = String.format("TRUNCATE %s",tableName);
+    }
+
+    // TODO: Impl logic how to create check log table
+    @Override
+    public boolean checkTable(String tableName) throws SQLException {
         DatabaseMetaData md = connection.getMetaData();
         ResultSet rs = md.getTables(null, "public", null, null);
         while (rs.next()) {
-            if (rs.getString(3).equals("logs")) {
+            if (rs.getString(3).equals(tableName)) {
                 isExistLogTable = true;
             }
         }
@@ -38,17 +44,51 @@ public class DbControllerImpl implements DbController {
 
     @Override
     public List<String> tableList() throws SQLException {
-        return jdbcTemplate.query("SELECT table_name FROM information_schema.tables WHERE table_schema=\'public\'",
+        String sqlCommand = "SELECT table_name FROM information_schema.tables WHERE table_schema=\'public\'";
+        return jdbcTemplate.query(sqlCommand,
                 new RowMapper<String>() {
                     @Override
                     public String mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        String rval = "";
                         for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
-                            rval =  rs.getString(i + 1);
+                            return rs.getString(i + 1);
                         }
-                        return rval;
+                        throw new SQLException();
                     }
                 });
+    }
+
+    public List<Table> selectTable(String sqlCommand) throws SQLException {
+        List<Table> rval;
+        rval =  jdbcTemplate.query(sqlCommand,
+                new RowMapper<Table>() {
+
+                    @Override
+                    public Table mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Table table = new Table();
+                        table.createTableResult(rs);
+                        return table;
+                    }
+                });
+        return rval;
+    }
+
+    public List<List<String>> selectAll(String sqlCommand) throws SQLException {
+        List<List<String>> rval;
+        rval =  jdbcTemplate.query(sqlCommand,
+                new RowMapper<List<String>>() {
+
+                    @Override
+                    public List<String> mapRow(ResultSet rs, int rowNum ) throws SQLException {
+
+                        List<String> list = new ArrayList<String>();
+                        for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+                            list.add(rs.getString(i + 1));
+                        }
+
+                        return list;
+                    }
+                });
+        return rval;
     }
 
     @Override
@@ -70,7 +110,6 @@ public class DbControllerImpl implements DbController {
 
     public void doUpdateExecution(String str) throws SQLException {
         Statement stmt = connection.createStatement();
-        //PreparedStatement stmt = connection.
         stmt.executeUpdate(str);
         stmt.close();
     }

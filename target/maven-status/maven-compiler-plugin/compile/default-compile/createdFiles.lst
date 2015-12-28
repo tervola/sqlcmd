@@ -8,6 +8,7 @@ ua\com\juja\tervola\sqlcmd\web\Connection.class
 ua\com\juja\tervola\sqlcmd\core\ConnectionManager.class
 ua\com\juja\tervola\sqlcmd\core\DbControllerImpl$1.class
 ua\com\juja\tervola\sqlcmd\core\DbController.class
+ua\com\juja\tervola\sqlcmd\core\DbControllerImpl$2.class
 ua\com\juja\tervola\sqlcmd\web\MainController.class
 ua\com\juja\tervola\sqlcmd\core\Controller.class
 ua\com\juja\tervola\sqlcmd\service\MessageText.class
