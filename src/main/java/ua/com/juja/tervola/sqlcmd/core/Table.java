@@ -1,7 +1,6 @@
 package ua.com.juja.tervola.sqlcmd.core;
 
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,11 @@ public class Table {
 
 
     public void createTableResult(ResultSet resultSet) throws SQLException {
-        for (int i = 0; i < resultSet.getMetaData().getColumnCount(); i++) {
-            title.add(resultSet.getMetaData().getColumnName(i+1));
+
+        if(resultSet.isFirst()){
+            for (int i = 0; i < resultSet.getMetaData().getColumnCount(); i++) {
+                title.add(resultSet.getMetaData().getColumnName(i+1));
+            }
         }
 
         for (int i = 0; i < resultSet.getMetaData().getColumnCount(); i++) {

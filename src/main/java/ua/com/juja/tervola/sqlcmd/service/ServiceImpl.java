@@ -2,10 +2,7 @@ package ua.com.juja.tervola.sqlcmd.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
-import ua.com.juja.tervola.sqlcmd.core.ConnectionManager;
-import ua.com.juja.tervola.sqlcmd.core.DbController;
-import ua.com.juja.tervola.sqlcmd.core.DbControllerImpl;
+import ua.com.juja.tervola.sqlcmd.core.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -100,8 +97,13 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public ArrayList<String[]> select(String command) throws SQLException {
-        ArrayList<String[]> rval = dbController.select(command);
+    public List<List<String>> select(String command) throws SQLException {
+        List<List<String>> rval = new ArrayList<>();
+        List<Table> tablelist = dbController.select(command);
+        rval.add(tablelist.get(0).getTitle());
+        for (Table s : tablelist) {
+            rval.add(s.getBody());
+        }
         return rval;
 
     }

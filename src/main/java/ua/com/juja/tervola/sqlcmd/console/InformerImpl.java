@@ -118,36 +118,21 @@ public class InformerImpl implements Informer {
                 print(String.valueOf(index++) + "." + s);
             }
             rval = 1;
-        } else if (string.equals("selectall")) {
-            string = "select * from employee";
-            print(String.format("\nResult: \"%s\"", string));
-
-            List<List<String>> list =  dbController.selectAll(string);
-            for (List<String> s : dbController.selectAll(string)){
-                System.out.println(s);
-            }
-            System.out.println("total records:" + list.size());
-
-            rval = 1;
-        } else if (string.equals("selecttable")) {
-            string = "select * from employee";
-            print(String.format("\nResult: \"%s\"", string));
-
-            ArrayList<Table> tablelist  = (ArrayList<Table>) dbController.selectTable(string);
-
-            System.out.println(tablelist.get(0).getTitle());
-            for (Table s : tablelist){
-
-                System.out.println(s.getBody().toString());
-            }
-
-
-            rval = 1;
         } else if (string.startsWith("select")) {
             print(String.format("\nResult: \"%s\"", string));
-            printTable(dbController.select(string));
+            List<Table> tablelist  = dbController.select(string);
+            if(tablelist.size() > 0) {
+                System.out.println(tablelist.get(0).getTitle());
+                for (Table s : tablelist) {
+
+                    System.out.println(s.getBody().toString());
+                }
+            } else {
+                print("table is empty or missing, use command list for check ");
+            }
             rval = 1;
-        } else {
+
+        }  else {
             dbController.executeCommand(string);
             print(String.format("%s command was successfully!!!", string.split(" ")[0]));
             rval = 1;

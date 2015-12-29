@@ -1,6 +1,7 @@
 package ua.com.juja.tervola.sqlcmd.service;
 
 import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
+import ua.com.juja.tervola.sqlcmd.core.Table;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public interface Service {
 
     List<String> tableList() throws SQLException;
 
-    ArrayList<String[]> select(String command) throws SQLException;
+    List<List<String>> select(String command) throws SQLException;
 
     void executeCommand(String command) throws SQLException;
 

@@ -57,7 +57,7 @@ public class DbControllerImpl implements DbController {
                 });
     }
 
-    public List<Table> selectTable(String sqlCommand) throws SQLException {
+    public List<Table> select(String sqlCommand) throws SQLException {
         List<Table> rval;
         rval =  jdbcTemplate.query(sqlCommand,
                 new RowMapper<Table>() {
@@ -69,37 +69,8 @@ public class DbControllerImpl implements DbController {
                         return table;
                     }
                 });
+
         return rval;
-    }
-
-    public List<List<String>> selectAll(String sqlCommand) throws SQLException {
-        List<List<String>> rval;
-        rval =  jdbcTemplate.query(sqlCommand,
-                new RowMapper<List<String>>() {
-
-                    @Override
-                    public List<String> mapRow(ResultSet rs, int rowNum ) throws SQLException {
-
-                        List<String> list = new ArrayList<String>();
-                        for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
-                            list.add(rs.getString(i + 1));
-                        }
-
-                        return list;
-                    }
-                });
-        return rval;
-    }
-
-    @Override
-    public ArrayList<String[]> select(String sql) throws SQLException {
-
-        Statement stmt = connection.createStatement();
-        ResultSet rs = stmt.executeQuery(sql);
-        ArrayList<String[]> table = createTable(rs);
-        stmt.close();
-
-        return table;
     }
 
     @Override
@@ -107,44 +78,9 @@ public class DbControllerImpl implements DbController {
         doUpdateExecution(sql);
     }
 
-
     public void doUpdateExecution(String str) throws SQLException {
         Statement stmt = connection.createStatement();
         stmt.executeUpdate(str);
         stmt.close();
-    }
-
-    private ArrayList<String[]> createTable(ResultSet resultSet) throws SQLException {
-        ArrayList<String[]> list = new ArrayList<String[]>();
-        int columnCount = resultSet.getMetaData().getColumnCount();
-        if (columnCount < 0) return null;
-
-        list.add(createTitle(resultSet, columnCount));
-
-        while (resultSet.next()) {
-            list.add(createBody(resultSet, columnCount));
-        }
-        return list;
-    }
-
-    private String[] createTitle(ResultSet resultSet, int columnCount) throws SQLException {
-
-        String[] tableTitles = new String[columnCount];
-
-
-        for (int i = 1; i <= columnCount; i++) {
-            tableTitles[i - 1] = resultSet.getMetaData().getColumnName(i);
-        }
-        return tableTitles;
-    }
-
-    private String[] createBody(ResultSet resultSet, int columnCount) throws SQLException {
-
-        String[] rval = new String[columnCount];
-
-        for (int i = 1; i <= columnCount; i++) {
-            rval[i - 1] = resultSet.getString(i);
-        }
-        return rval;
     }
 }

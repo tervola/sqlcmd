@@ -15,7 +15,7 @@ public interface DbController {
 
     List<String> tableList() throws SQLException;
 
-    ArrayList<String[]> select(String sql) throws SQLException;
+    List<Table> select(String sql) throws SQLException;
 
     void executeCommand(String sql) throws SQLException;
 
