@@ -99,8 +99,10 @@ public class ServiceImpl implements Service {
     @Override
     public List<List<String>> select(String command) throws SQLException {
         List<List<String>> rval = new ArrayList<>();
+
+        List<String> title = dbController.getTitle(command);
+        rval.add(title);
         List<Table> tablelist = dbController.select(command);
-        rval.add(tablelist.get(0).getTitle());
         for (Table s : tablelist) {
             rval.add(s.getBody());
         }

@@ -24,6 +24,6 @@ public class MessageText {
     }
 
     public String getCommandSelectMock() {
-        return "select * from employee";
+        return "select * from id";
     }
 }

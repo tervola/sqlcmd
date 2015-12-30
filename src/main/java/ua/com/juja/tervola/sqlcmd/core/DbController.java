@@ -17,6 +17,8 @@ public interface DbController {
 
     List<Table> select(String sql) throws SQLException;
 
+    List<String> getTitle(String tableName) throws SQLException;
+
     void executeCommand(String sql) throws SQLException;
 
     void truncateTable(String tableName) throws SQLException;

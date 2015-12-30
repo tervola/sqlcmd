@@ -8,6 +8,8 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by user on 8/28/2015.
@@ -26,7 +28,7 @@ public class DbControllerImpl implements DbController {
     //TODO: add tests, change logic for trancate/
     @Override
     public void truncateTable(String tableName) throws SQLException {
-        String sqlCommand = String.format("TRUNCATE %s",tableName);
+        String sqlCommand = String.format("TRUNCATE %s", tableName);
     }
 
     // TODO: Impl logic how to create check log table
@@ -57,6 +59,7 @@ public class DbControllerImpl implements DbController {
                 });
     }
 
+    @Override
     public List<Table> select(String sqlCommand) throws SQLException {
         List<Table> rval;
         rval =  jdbcTemplate.query(sqlCommand,
@@ -74,13 +77,31 @@ public class DbControllerImpl implements DbController {
     }
 
     @Override
-    public void executeCommand(String sql) throws SQLException {
-        doUpdateExecution(sql);
+     public List<String> getTitle(String sqlCommand) throws SQLException {
+        String tableName = null;
+        Matcher matcher = Pattern.compile("select .* from ([a-z]+)").matcher(sqlCommand);
+        if(matcher.find())
+        {
+            tableName =  matcher.group(1);
+        }
+        sqlCommand = String.format("SELECT column_name FROM information_schema.columns WHERE table_schema = 'public' AND table_name = '%s'", tableName);
+        return  jdbcTemplate.query(sqlCommand,
+                new RowMapper<String>() {
+
+                    @Override
+                    public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
+                            return rs.getString(i + 1);
+                        }
+                        throw new SQLException();
+                    }
+                });
+
     }
 
-    public void doUpdateExecution(String str) throws SQLException {
-        Statement stmt = connection.createStatement();
-        stmt.executeUpdate(str);
-        stmt.close();
+    @Override
+    public void executeCommand(String sqlCommand) throws SQLException {
+        jdbcTemplate.execute(sqlCommand);
     }
+
 }

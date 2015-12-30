@@ -121,14 +121,12 @@ public class InformerImpl implements Informer {
         } else if (string.startsWith("select")) {
             print(String.format("\nResult: \"%s\"", string));
             List<Table> tablelist  = dbController.select(string);
+            System.out.println(dbController.getTitle(string));
             if(tablelist.size() > 0) {
-                System.out.println(tablelist.get(0).getTitle());
                 for (Table s : tablelist) {
 
                     System.out.println(s.getBody().toString());
                 }
-            } else {
-                print("table is empty or missing, use command list for check ");
             }
             rval = 1;
 
