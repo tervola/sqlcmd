@@ -17,20 +17,12 @@ public class DbControllerImpl implements DbController {
     Connection connection;
     JdbcTemplate jdbcTemplate;
     boolean isExistLogTable = false;
-    private Table table;
 
     public DbControllerImpl(Connection connection) {
         this.connection = connection;
         jdbcTemplate = new JdbcTemplate(new SingleConnectionDataSource(connection, false));
     }
 
-    //TODO: add tests, change logic for trancate/
-    @Override
-    public void truncateTable(String tableName) throws SQLException {
-        String sqlCommand = String.format("TRUNCATE %s", tableName);
-    }
-
-    // TODO: Impl logic how to create check log table
     @Override
     public boolean checkTable(String tableName) throws SQLException {
         DatabaseMetaData md = connection.getMetaData();
@@ -75,23 +67,6 @@ public class DbControllerImpl implements DbController {
         return rval;
     }
 
-//    @Override
-//    public List<Rows> select(String sqlCommand) throws SQLException {
-//        List<Rows> rval;
-//        rval =  jdbcTemplate.query(sqlCommand,
-//                new RowMapper<Rows>() {
-//
-//                    @Override
-//                    public Rows mapRow(ResultSet rs, int rowNum) throws SQLException {
-//                        Rows table = new Rows();
-//                        table.createTableResult(rs);
-//                        return table;
-//                    }
-//                });
-//
-//        return rval;
-//    }
-
     @Override
      public List<String> getTitle(String sqlCommand) throws SQLException {
         String tableName = null;
@@ -118,9 +93,5 @@ public class DbControllerImpl implements DbController {
     @Override
     public void executeCommand(String sqlCommand) throws SQLException {
         jdbcTemplate.execute(sqlCommand);
-    }
-
-    public Table getTable() {
-        return table;
     }
 }

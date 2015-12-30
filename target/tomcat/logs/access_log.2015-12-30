@@ -78,3 +78,4 @@
 0:0:0:0:0:0:0:1 - - [30/Dec/2015:17:03:59 +0200] "GET /sqlcmd/select_mock HTTP/1.1" 200 774 http-bio-9090-exec-10 4
 0:0:0:0:0:0:0:1 - - [30/Dec/2015:17:04:00 +0200] "POST /sqlcmd/select_mock HTTP/1.1" 302 - http-bio-9090-exec-10 2
 0:0:0:0:0:0:0:1 - - [30/Dec/2015:17:04:00 +0200] "GET /sqlcmd/select_result HTTP/1.1" 200 23501 http-bio-9090-exec-10 8
+0:0:0:0:0:0:0:1 - - [30/Dec/2015:17:07:44 +0200] "GET /sqlcmd/menu HTTP/1.1" 200 908 http-bio-9090-exec-5 5

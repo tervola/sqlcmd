@@ -15,8 +15,6 @@ public class ServiceImpl implements Service {
     private ConnectionManager connectionManager;
     @Autowired
     private ConfigReader configReader;
-    @Autowired
-    private Menu menu;
     private DbController dbController;
     private Connection connection;
     private boolean isConnected = false;
@@ -40,8 +38,6 @@ public class ServiceImpl implements Service {
     public void setIsLoggingEnabled(boolean isLoggingEnabled) {
         this.isLoggingEnabled = isLoggingEnabled;
     }
-
-
 
     @Override
     public void connect(String dbName, String userName, String password) throws SQLException {
@@ -101,18 +97,12 @@ public class ServiceImpl implements Service {
 
         Table table = new Table(dbController, sqlCommand);
 
-        List<List<String>> rval = new ArrayList<>();
+        List<List<String>> result = new ArrayList<>();
 
         for (List<String> row : table.getTable()) {
-            rval.add(row);
+            result.add(row);
         }
-//        List<String> title = dbController.getTitle(command);
-//        rval.add(title);
-//        List<Rows> tablelist = dbController.select(command);
-//        for (Rows s : tablelist) {
-//            rval.add(s.getBody());
-//        }
-        return rval;
+        return result;
 
     }
 
@@ -120,5 +110,4 @@ public class ServiceImpl implements Service {
     public void executeCommand(String command) throws SQLException {
         dbController.executeCommand(command);
     }
-
 }

@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbbca376-70b0-4460-b12d-b9e1fdd9fdd2" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\JUJA\sqlcmd\target\classes\ua\com\juja\tervola\sqlcmd\core\Table.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbController.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl$2.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl$3.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/console/InformerImpl.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/console/InformerImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/connect_005fmock_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/connect_005fmock_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fmock_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fmock_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fresult_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fresult_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/list_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/list_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/menu_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/menu_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fmock_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fmock_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fresult_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fresult_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_jsp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbController.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/console/InformerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/console/InformerImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/Table.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/Table.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-12-30" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2015-12-30" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/connect_005fmock_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/connect_005fmock_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fmock_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fmock_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fresult_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/execute_005fresult_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/list_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/list_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/menu_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/menu_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fmock_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fmock_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fresult_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_005fresult_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/sqlcmd/org/apache/jsp/view/select_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\JUJA\sqlcmd\src\main\java\ua\com\juja\tervola\sqlcmd\service\service.java" afterPath="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/Service.java" />
     </list>
     <ignored path="sqlcmd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,30 +33,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InformerImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InformerImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/console/InformerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5069061">
+            <state vertical-scroll-proportion="0.0">
               <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DbControllerImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java">
+      <file leaf-file-name="DbController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="122" column="29" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbControllerImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0801105">
+              <caret line="53" column="69" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
               <folding>
-                <element signature="e#1626#2028#0" expanded="true" />
-                <element signature="e#2027#2028#0" expanded="true" />
-                <element signature="e#2210#2531#0" expanded="true" />
-                <element signature="e#2530#2531#0" expanded="true" />
-                <element signature="e#3638#4041#0" expanded="true" />
-                <element signature="e#4040#4041#0" expanded="true" />
-                <element signature="e#4243#4244#0" expanded="true" />
-                <marker date="1451484652100" expanded="true" signature="1483:1561" placeholder="SELECT table..tables..." />
+                <element signature="e#1337#1739#0" expanded="true" />
+                <element signature="e#1738#1739#0" expanded="true" />
+                <element signature="e#1921#2242#0" expanded="true" />
+                <element signature="e#2241#2242#0" expanded="true" />
+                <element signature="e#2792#3195#0" expanded="true" />
+                <element signature="e#3194#3195#0" expanded="true" />
+                <marker date="1451488111403" expanded="true" signature="1194:1272" placeholder="SELECT table..tables..." />
               </folding>
             </state>
           </provider>
@@ -97,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="105" column="29" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="29" />
+              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -207,13 +185,13 @@
         <option value="$PROJECT_DIR$/src/test/java/TestMock01.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/TestMock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbController.java" />
         <option value="$PROJECT_DIR$/src/test/java/testing.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/Rows.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/Table.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/console/InformerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbController.java" />
       </list>
     </option>
   </component>
@@ -1007,7 +985,7 @@
       <workItem from="1448978117699" duration="36249000" />
       <workItem from="1450344656358" duration="52205000" />
       <workItem from="1450966924123" duration="4503000" />
-      <workItem from="1451039533449" duration="52849000" />
+      <workItem from="1451039533449" duration="53257000" />
     </task>
     <task id="LOCAL-00001" summary="move resources, fix read from resources file">
       <created>1447411772565</created>
@@ -1049,7 +1027,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257970000" />
+    <option name="totallyTimeSpent" value="258378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1129,18 +1107,6 @@
           <line>20</line>
           <properties class="ua.com.juja.tervola.sqlcmd.core.Table" method="getTable" />
           <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java</url>
-          <line>130</line>
-          <properties />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java</url>
-          <line>110</line>
-          <properties />
-          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="81" />
@@ -1495,14 +1461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40236688">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_40/src.zip!/java/util/regex/Matcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1532,36 +1490,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="130" column="69" selection-start-line="130" selection-start-column="69" selection-end-line="130" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DatabaseCRUD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41298342">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="122" column="29" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
-          <folding>
-            <element signature="e#1626#2028#0" expanded="true" />
-            <element signature="e#2027#2028#0" expanded="true" />
-            <element signature="e#2210#2531#0" expanded="true" />
-            <element signature="e#2530#2531#0" expanded="true" />
-            <element signature="e#3638#4041#0" expanded="true" />
-            <element signature="e#4040#4041#0" expanded="true" />
-            <element signature="e#4243#4244#0" expanded="true" />
-            <marker date="1451484652100" expanded="true" signature="1483:1561" placeholder="SELECT table..tables..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1575,19 +1508,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/console/InformerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="29" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="29" />
+          <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/console/InformerImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/service/ServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5069061">
-          <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/web/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="130" column="69" selection-start-line="130" selection-start-column="69" selection-end-line="130" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/com/juja/tervola/sqlcmd/core/DbControllerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0801105">
+          <caret line="53" column="69" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
+          <folding>
+            <element signature="e#1337#1739#0" expanded="true" />
+            <element signature="e#1738#1739#0" expanded="true" />
+            <element signature="e#1921#2242#0" expanded="true" />
+            <element signature="e#2241#2242#0" expanded="true" />
+            <element signature="e#2792#3195#0" expanded="true" />
+            <element signature="e#3194#3195#0" expanded="true" />
+            <marker date="1451488111403" expanded="true" signature="1194:1272" placeholder="SELECT table..tables..." />
+          </folding>
         </state>
       </provider>
     </entry>
