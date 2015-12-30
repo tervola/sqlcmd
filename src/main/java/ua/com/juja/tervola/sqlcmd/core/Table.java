@@ -1,38 +1,32 @@
 package ua.com.juja.tervola.sqlcmd.core;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by user on 12/25/2015.
+ * Created by user on 12/30/2015.
  */
 public class Table {
+    List<List<String>> tableResult;
+    DbController dbController;
+    String sqlCommand;
 
-//    private List<String> title = new ArrayList<>();
-    private List<String> body = new ArrayList<>();
+    public Table(DbController dbController, String sqlCommand) {
+        this.dbController = dbController;
+        this.sqlCommand = sqlCommand;
+        tableResult = new ArrayList<>();
+    }
 
+    public List<List<String>> getTable() throws SQLException {
+        tableResult.add(dbController.getTitle(sqlCommand));
 
-    public void createTableResult(ResultSet resultSet) throws SQLException {
+        List<Rows> tablelist  = dbController.select(sqlCommand);
 
-//        if(resultSet.isFirst()){
-//            for (int i = 0; i < resultSet.getMetaData().getColumnCount(); i++) {
-//                title.add(resultSet.getMetaData().getColumnName(i+1));
-//            }
-//        }
-
-        for (int i = 0; i < resultSet.getMetaData().getColumnCount(); i++) {
-            body.add(resultSet.getString(i + 1));
+        for (Rows s : tablelist) {
+            tableResult.add(s.getBody());
         }
+
+        return tableResult;
     }
-
-    public List<String> getBody() {
-        return body;
-    }
-
-//    public List<String> getTitle() throws SQLException {
-//        return title;
-//    }
-
 }

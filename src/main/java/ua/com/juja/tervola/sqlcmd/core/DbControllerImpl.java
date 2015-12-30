@@ -1,12 +1,10 @@
 package ua.com.juja.tervola.sqlcmd.core;
 
-import javafx.scene.control.Tab;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,6 +17,7 @@ public class DbControllerImpl implements DbController {
     Connection connection;
     JdbcTemplate jdbcTemplate;
     boolean isExistLogTable = false;
+    private Table table;
 
     public DbControllerImpl(Connection connection) {
         this.connection = connection;
@@ -60,14 +59,14 @@ public class DbControllerImpl implements DbController {
     }
 
     @Override
-    public List<Table> select(String sqlCommand) throws SQLException {
-        List<Table> rval;
+    public List<Rows> select(String sqlCommand) throws SQLException {
+        List<Rows> rval;
         rval =  jdbcTemplate.query(sqlCommand,
-                new RowMapper<Table>() {
+                new RowMapper<Rows>() {
 
                     @Override
-                    public Table mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        Table table = new Table();
+                    public Rows mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Rows table = new Rows();
                         table.createTableResult(rs);
                         return table;
                     }
@@ -75,6 +74,23 @@ public class DbControllerImpl implements DbController {
 
         return rval;
     }
+
+//    @Override
+//    public List<Rows> select(String sqlCommand) throws SQLException {
+//        List<Rows> rval;
+//        rval =  jdbcTemplate.query(sqlCommand,
+//                new RowMapper<Rows>() {
+//
+//                    @Override
+//                    public Rows mapRow(ResultSet rs, int rowNum) throws SQLException {
+//                        Rows table = new Rows();
+//                        table.createTableResult(rs);
+//                        return table;
+//                    }
+//                });
+//
+//        return rval;
+//    }
 
     @Override
      public List<String> getTitle(String sqlCommand) throws SQLException {
@@ -104,4 +120,7 @@ public class DbControllerImpl implements DbController {
         jdbcTemplate.execute(sqlCommand);
     }
 
+    public Table getTable() {
+        return table;
+    }
 }

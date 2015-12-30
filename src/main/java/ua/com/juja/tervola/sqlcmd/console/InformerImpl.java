@@ -1,9 +1,6 @@
 package ua.com.juja.tervola.sqlcmd.console;
 
-import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
-import ua.com.juja.tervola.sqlcmd.core.ConnectionManager;
-import ua.com.juja.tervola.sqlcmd.core.DbControllerImpl;
-import ua.com.juja.tervola.sqlcmd.core.Table;
+import ua.com.juja.tervola.sqlcmd.core.*;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -120,13 +117,10 @@ public class InformerImpl implements Informer {
             rval = 1;
         } else if (string.startsWith("select")) {
             print(String.format("\nResult: \"%s\"", string));
-            List<Table> tablelist  = dbController.select(string);
-            System.out.println(dbController.getTitle(string));
-            if(tablelist.size() > 0) {
-                for (Table s : tablelist) {
+            Table table = new Table(dbController,string);
 
-                    System.out.println(s.getBody().toString());
-                }
+            for (List<String> row : table.getTable()) {
+                System.out.println(row.toString());
             }
             rval = 1;
 
