@@ -7,6 +7,8 @@
           <element id="module-output" name="sqlcmd" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:3.2.2.RELEASE" />

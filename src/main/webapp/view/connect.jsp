@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td>Password</td>
-            <td><form:input path="password" id="password"/></td>
+            <td><form:password path="password" id="password" /></td>
         </tr>
         <tr>
             <td></td>
