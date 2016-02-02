@@ -1,0 +1,14 @@
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:35 +0200] "GET /sqlcmd/ HTTP/1.1" 302 - http-bio-9090-exec-1 618
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:35 +0200] "GET /sqlcmd/menu HTTP/1.1" 200 738 http-bio-9090-exec-3 130
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:35 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-4 0
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:37 +0200] "GET /sqlcmd/connect_mock HTTP/1.1" 200 742 http-bio-9090-exec-5 160
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:37 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-6 0
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:38 +0200] "POST /sqlcmd/connect_mock HTTP/1.1" 302 - http-bio-9090-exec-7 470
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:38 +0200] "GET /sqlcmd/menu?status=connected%21 HTTP/1.1" 200 908 http-bio-9090-exec-8 3
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:40 +0200] "GET /sqlcmd/help HTTP/1.1" 200 1359 http-bio-9090-exec-9 894
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:41 +0200] "GET /sqlcmd/menu HTTP/1.1" 200 908 http-bio-9090-exec-10 3
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:42 +0200] "GET /sqlcmd/list HTTP/1.1" 200 935 http-bio-9090-exec-10 120
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:44 +0200] "GET /sqlcmd/menu HTTP/1.1" 200 908 http-bio-9090-exec-10 2
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:46 +0200] "GET /sqlcmd/select_mock HTTP/1.1" 200 774 http-bio-9090-exec-10 12
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:47 +0200] "POST /sqlcmd/select_mock HTTP/1.1" 302 - http-bio-9090-exec-10 1
+0:0:0:0:0:0:0:1 - - [02/Feb/2016:16:32:47 +0200] "GET /sqlcmd/select_result HTTP/1.1" 200 23501 http-bio-9090-exec-10 427

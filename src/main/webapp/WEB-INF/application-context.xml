@@ -9,9 +9,9 @@
     <context:annotation-config/>
     <context:component-scan base-package="ua.com.juja.tervola.sqlcmd"/>
 
-    <bean id="userActionsDao" class="ua.com.juja.tervola.sqlcmd.model.UserActionsDao">
-        <property name="dataSource" ref="logDataSource"/>
-    </bean>
+    <!--<bean id="userActionsDao" class="ua.com.juja.tervola.sqlcmd.model.UserActionsDaoImpl">-->
+        <!--<property name="dataSource" ref="logDataSource"/>-->
+    <!--</bean>-->
         <!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
         <!--<property name="url" value="jdbc:mysql://localhost:3306/mkyongjava" />-->
         <!--<property name="username" value="root" />-->

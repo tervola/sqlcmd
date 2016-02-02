@@ -1,6 +1,7 @@
 package ua.com.juja.tervola.sqlcmd.service;
 
 import ua.com.juja.tervola.sqlcmd.core.ConfigReader;
+import ua.com.juja.tervola.sqlcmd.model.UserAction;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -29,6 +30,10 @@ public interface Service {
 
     void executeCommand(String command) throws SQLException;
 
+
+    List<UserAction> getAllfor(String userName);
+
+    void log(UserAction userAction);
 
     void enablingLog(boolean cleanFlag) throws SQLException;
 

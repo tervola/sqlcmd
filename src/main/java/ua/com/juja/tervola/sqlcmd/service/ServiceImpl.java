@@ -3,6 +3,8 @@ package ua.com.juja.tervola.sqlcmd.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ua.com.juja.tervola.sqlcmd.core.*;
+import ua.com.juja.tervola.sqlcmd.model.UserAction;
+import ua.com.juja.tervola.sqlcmd.model.UserActionsDao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,6 +21,22 @@ public class ServiceImpl implements Service {
     private Connection connection;
     private boolean isConnected = false;
     private boolean isLoggingEnabled = false;
+
+    @Autowired
+    private UserActionsDao userActionsDao;
+
+    @Override
+    public List<UserAction> getAllfor(String userName) {
+        if(userName == null) {
+            throw new IllegalArgumentException("user name cant be null");
+        }
+        return userActionsDao.getAllFor(userName);
+    }
+    @Override
+    public void log(UserAction userAction) {
+     // nope
+
+    }
 
     @Override
     public void enablingLog(boolean cleanFlag) throws SQLException {
@@ -47,6 +65,8 @@ public class ServiceImpl implements Service {
         if (connectionManager != null) {
             isConnected = true;
         }
+
+        userActionsDao.log(userName,dbName, "CONNECT");
     }
 
     @Override
@@ -57,6 +77,7 @@ public class ServiceImpl implements Service {
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5436/MyDb", "postgres", "Password01");
             dbController = new DbControllerImpl(connection);
             isConnected = true;
+            userActionsDao.log("postgres","MyDb", "CONNECT2");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -102,12 +123,14 @@ public class ServiceImpl implements Service {
         for (List<String> row : table.getTable()) {
             result.add(row);
         }
+        userActionsDao.log(configReader.getUserName(),configReader.getDatabaseName(), sqlCommand);
         return result;
 
     }
 
     @Override
-    public void executeCommand(String command) throws SQLException {
-        dbController.executeCommand(command);
+    public void executeCommand(String sqlCommand) throws SQLException {
+        dbController.executeCommand(sqlCommand);
+        userActionsDao.log(configReader.getUserName(), configReader.getDatabaseName(), sqlCommand);
     }
 }
